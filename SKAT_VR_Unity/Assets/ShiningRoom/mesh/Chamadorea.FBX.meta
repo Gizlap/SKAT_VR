@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 656047cc00cd69642aef7767bce887bb
+timeCreated: 1434916296
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: chamadorea
+    100004: Line001
+    100006: Rectangle001
+    100008: Line002
+    100010: Rectangle002
+    100012: Line003
+    100014: Rectangle003
+    100016: Line004
+    100018: Line005
+    100020: Rectangle004
+    100022: Rectangle005
+    100024: Object001
+    100026: Rectangle006
+    100028: Rectangle007
+    100030: Rectangle008
+    100032: Rectangle009
+    100034: Object002
+    100036: Object003
+    100038: Object004
+    100040: Line006
+    400000: //RootNode
+    400002: chamadorea
+    400004: Line001
+    400006: Rectangle001
+    400008: Line002
+    400010: Rectangle002
+    400012: Line003
+    400014: Rectangle003
+    400016: Line004
+    400018: Line005
+    400020: Rectangle004
+    400022: Rectangle005
+    400024: Object001
+    400026: Rectangle006
+    400028: Rectangle007
+    400030: Rectangle008
+    400032: Rectangle009
+    400034: Object002
+    400036: Object003
+    400038: Object004
+    400040: Line006
+    2300000: chamadorea
+    2300002: Line001
+    2300004: Rectangle001
+    2300006: Line002
+    2300008: Rectangle002
+    2300010: Line003
+    2300012: Rectangle003
+    2300014: Line004
+    2300016: Line005
+    2300018: Rectangle004
+    2300020: Rectangle005
+    2300022: Object001
+    2300024: Rectangle006
+    2300026: Rectangle007
+    2300028: Rectangle008
+    2300030: Rectangle009
+    2300032: Object002
+    2300034: Object003
+    2300036: Object004
+    2300038: Line006
+    2300040: //RootNode
+    3300000: chamadorea
+    3300002: Line001
+    3300004: Rectangle001
+    3300006: Line002
+    3300008: Rectangle002
+    3300010: Line003
+    3300012: Rectangle003
+    3300014: Line004
+    3300016: Line005
+    3300018: Rectangle004
+    3300020: Rectangle005
+    3300022: Object001
+    3300024: Rectangle006
+    3300026: Rectangle007
+    3300028: Rectangle008
+    3300030: Rectangle009
+    3300032: Object002
+    3300034: Object003
+    3300036: Object004
+    3300038: Line006
+    3300040: //RootNode
+    4300000: chamadorea
+    4300002: Line001
+    4300004: Rectangle001
+    4300006: Rectangle002
+    4300008: Line002
+    4300010: Rectangle003
+    4300012: Line003
+    4300014: Line004
+    4300016: Rectangle004
+    4300018: Line005
+    4300020: Rectangle005
+    4300022: Rectangle006
+    4300024: Rectangle007
+    4300026: Rectangle008
+    4300028: Object001
+    4300030: Rectangle009
+    4300032: Object002
+    4300034: Object003
+    4300036: Object004
+    4300038: Line006
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
