@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 2ab279619d9f292478c82149790a7a84
+timeCreated: 1434647730
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bulb
+    100002: Bulb001
+    100004: Bulb002
+    100006: Bulb003
+    100008: Bulb004
+    100010: pin
+    100012: pin001
+    100014: pin002
+    100016: pin003
+    100018: pin004
+    100020: Spotlight
+    100022: Spotlight001
+    100024: Spotlight002
+    100026: Spotlight003
+    100028: Spotlight004
+    100030: //RootNode
+    400000: Bulb
+    400002: Bulb001
+    400004: Bulb002
+    400006: Bulb003
+    400008: Bulb004
+    400010: pin
+    400012: pin001
+    400014: pin002
+    400016: pin003
+    400018: pin004
+    400020: Spotlight
+    400022: Spotlight001
+    400024: Spotlight002
+    400026: Spotlight003
+    400028: Spotlight004
+    400030: //RootNode
+    2300000: Bulb
+    2300002: Bulb001
+    2300004: Bulb002
+    2300006: Bulb003
+    2300008: Bulb004
+    2300010: pin
+    2300012: pin001
+    2300014: pin002
+    2300016: pin003
+    2300018: pin004
+    2300020: Spotlight
+    2300022: Spotlight001
+    2300024: Spotlight002
+    2300026: Spotlight003
+    2300028: Spotlight004
+    2300030: //RootNode
+    3300000: Bulb
+    3300002: Bulb001
+    3300004: Bulb002
+    3300006: Bulb003
+    3300008: Bulb004
+    3300010: pin
+    3300012: pin001
+    3300014: pin002
+    3300016: pin003
+    3300018: pin004
+    3300020: Spotlight
+    3300022: Spotlight001
+    3300024: Spotlight002
+    3300026: Spotlight003
+    3300028: Spotlight004
+    3300030: //RootNode
+    4300000: base
+    4300002: pin003
+    4300004: Spotlight003
+    4300006: Bulb003
+    4300008: pin
+    4300010: Spotlight
+    4300012: Bulb
+    4300014: pin002
+    4300016: Spotlight002
+    4300018: Bulb002
+    4300020: pin004
+    4300022: Spotlight004
+    4300024: Bulb004
+    4300026: pin001
+    4300028: Spotlight001
+    4300030: Bulb001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
