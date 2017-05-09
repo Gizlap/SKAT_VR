@@ -88,7 +88,7 @@ public class Printer : MonoBehaviour {
 		newTask.transform.position = first.position;
 
 		//TODO
-		newTask.SetText (-1, "text");
+		newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
 
 	}
 }

@@ -75,7 +75,7 @@ public class DocumentController : MonoBehaviour {
 			//plane.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.01f, stampPos.z);
 			stamp.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.005f, stampPos.z);
 			stamp.transform.Rotate(new Vector3(270f, 180f, 0f));
-			stamp.transform.localScale = new Vector3 (0.225f, 1f, 0.15f);
+			stamp.transform.localScale = new Vector3 (0.39f, 1f, 0.26f);
 
 			//PrintObject.StartPrint ();
 
