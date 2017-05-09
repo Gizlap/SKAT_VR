@@ -11,19 +11,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
-        [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
-        [SerializeField] private float m_JumpSpeed;
-        [SerializeField] private float m_StickToGroundForce;
-        [SerializeField] private float m_GravityMultiplier;
-        [SerializeField] private MouseLook m_MouseLook;
-        [SerializeField] private bool m_UseFovKick;
+        [SerializeField] private float m_WalkSpeed = 0f;
+        [SerializeField] private float m_RunSpeed = 0f;
+        [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten = 0f;
+        [SerializeField] private float m_JumpSpeed = 0f;
+        [SerializeField] private float m_StickToGroundForce = 0f;
+        [SerializeField] private float m_GravityMultiplier = 0f;
+        [SerializeField] private MouseLook m_MouseLook = null;
+        [SerializeField] private bool m_UseFovKick = false;
         [SerializeField] private FOVKick m_FovKick = new FOVKick();
-        [SerializeField] private bool m_UseHeadBob;
+        [SerializeField] private bool m_UseHeadBob = false;
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
-        [SerializeField] private float m_StepInterval;
+        [SerializeField] private float m_StepInterval = 0f;
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
