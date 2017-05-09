@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class TextController : MonoBehaviour {
 
-	TextMesh textField;
+	public TextMesh textField;
 
 	public int letterLimit = 32;
 
 	// Use this for initialization
 	void Start () {
-		textField = this.GetComponent<TextMesh> ();
+		//textField = this.GetComponent<TextMesh> ();
 		//SetText ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia neque est.");
 	}
 	

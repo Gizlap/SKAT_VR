@@ -396,12 +396,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1645934092372694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d69ee716ac59e74db8934c0429ed82c, type: 3}
+  m_Script: {fileID: 11500000, guid: 230fa11329d6d784d951935064c0fa2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrintObject: {fileID: 0}
+  tControl: {fileID: 114868486673409224}
   AppPrefab: {fileID: 1454671756112744, guid: a85368f4c1f92bc4fb613745b0f50c58, type: 2}
   DenPrefab: {fileID: 1312929037218384, guid: aff1fd85ae0c84b479010c1768c4f02d, type: 2}
+  stampable: 0
+  documentId: 0
+  scoreTrack: {fileID: 0}
 --- !u!114 &114868486673409224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -413,4 +416,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44d5ae353c0d00438656f52d36846b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textField: {fileID: 102602642725534938}
   letterLimit: 32

@@ -2,16 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StampArea : MonoBehaviour {
+public class DocumentController : MonoBehaviour {
 
-	public Printer PrintObject;
+	//public Printer PrintObject;
+
+	public TextController tControl;
 
 	public GameObject AppPrefab;
 	public GameObject DenPrefab;
 
+	public bool stampable = false;
+
+	private bool stamped = false;
+
+	public int documentId = -1;
+
+	public ScoreController scoreTrack;
+
+	private StampVariation stampStatus;
+
 	// Use this for initialization
 	void Start () {
 		
+	}
+
+	/**
+	 * Should only be called once per document
+	 */
+	public void DisableStamping(){
+		stampable = false;
+		//TODO
+		//scoreTrack.AddScore (stampStatus, documentId);
+	}
+
+	public void EnableStamping(){
+		stampable = true;
+	}
+
+	public void SetText(int docId, string text){
+		documentId = docId;
+		tControl.SetText (text);
 	}
 
 	// 1
@@ -22,7 +52,10 @@ public class StampArea : MonoBehaviour {
 		//stampDetect.other.transform.position
 
 		Stamp stampedStamp = other.GetComponent<Stamp> ();
-		if (stampedStamp != null) {
+		if (stampable && stampedStamp != null) {
+			stampStatus = stampedStamp.variation;
+			stamped = true;
+
 			GameObject stamp;
 			if (stampedStamp.variation == StampVariation.Approved) {
 				stamp = Instantiate (AppPrefab);
@@ -33,6 +66,7 @@ public class StampArea : MonoBehaviour {
 			} else {
 				stamp = null;
 			}
+
 
 			Vector3 stampPos = other.transform.position;
 
