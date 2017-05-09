@@ -6,6 +6,8 @@ public class Printer : MonoBehaviour {
 
 	public GameObject blanket;
 
+	public JsonController json;
+
 	//public float printSpeedFactor = 0.1f;
 
 	public Transform first;
@@ -83,12 +85,18 @@ public class Printer : MonoBehaviour {
 
 		GameObject obj = Instantiate (blanket);
 
+		int id = 0;
+
+		string text = json.GetTask (out id);
+
 		newTask = obj.GetComponent<DocumentController> ();
+
+		newTask.SetText (id, text);
 
 		newTask.transform.position = first.position;
 
 		//TODO
-		newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
+		//newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
 
 	}
 }
