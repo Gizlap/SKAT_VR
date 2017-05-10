@@ -3,11 +3,11 @@
 	{
 		"id": 0,
 		"answer": true,
-		"text": "Skal der udbetales 10 mio til Svindell og Søn ApS?"
+		"text": "Skal der udbetales 10 mio til Svindell og S\u00F8n ApS?"
 	},
 	{
-		"id":---,
-		"answer": true/false,
+		"id":1,
+		"answer": false,
 		"text": "*text*"
 	}	
 	]

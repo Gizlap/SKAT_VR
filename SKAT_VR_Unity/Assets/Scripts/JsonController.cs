@@ -44,10 +44,6 @@ public class JsonController : MonoBehaviour
 		id = System.Convert.ToInt32(task ["id"].ToString());
 
 		return text;
-
-		//Debug.Log (text);
-		//Debug.Log (id);
-		//TODO return it
 	}
 }
 
