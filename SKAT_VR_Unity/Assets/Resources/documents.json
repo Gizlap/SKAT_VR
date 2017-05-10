@@ -1,14 +1,53 @@
 {
-	"list": [
-	{
-		"id": 0,
-		"answer": true,
-		"text": "Skal der udbetales 10 mio til Svindell og S\u00F8n ApS?"
-	},
-	{
-		"id":1,
-		"answer": false,
-		"text": "*text*"
-	}	
+	"list": [{
+			"id": 0,
+			"answer": false,
+			"text": "Skal der udbetales 10 mio til Svindell og Søn ApS?"
+		},
+		{
+			"id": 1,
+			"answer": false,
+			"text": "Skal vi godkende udbetalingen på 20 millioner for negativ moms til Candy og Co for 10. år i træk?"
+		},
+		{
+			"id": 2,
+			"answer": false,
+			"text": "Er regningen fra Hooters fradragsberettiget når den kommer fra Scientology?"
+		},
+		{
+			"id": 3,
+			"answer": true,
+			"text": "Kan Bente Blomst I/S fratrække sine husleje udgifter, som er afholdt seks måneder før virksomheden startede?"
+		},
+		{
+			"id": 4,
+			"answer": true,
+			"text": "Skal Telefonfis ApS betale skat af fri telefon, når de driver deres virksomhed fra privat bolig?"
+		},
+		{
+			"id": 5,
+			"answer": false,
+			"text": "Skal Helle Snorlige betale skat i Danmark, når hun er bosiddende i London?"
+		},
+		{
+			"id": 6,
+			"answer": true,
+			"text": "Skal selskabet Rettidig Omhu I/S betale et skattetillæg på 200 kr. om dagen, hvis selskabet ikke selvangiver til tiden?"
+		},
+		{
+			"id": 7,
+			"answer": true,
+			"text": "Må Søborg kommune selv inddrive gæld vedrørende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2017?"
+		},
+		{
+			"id": 8,
+			"answer": false,
+			"text": "Må Gentofte kommune selv inddrive gæld vedrørende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2016?"
+		},
+		{
+			"id": 9,
+			"answer": false,
+			"text": "Må escortservice firmaet Pleasure Pernille I/S trække udgiften til silikonebrysterne fra?"
+		}
 	]
 }
