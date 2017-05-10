@@ -7,6 +7,7 @@ public class Printer : MonoBehaviour {
 	public GameObject blanket;
 
 	public JsonController json;
+	public ScoreController scoreCont;
 
 	//public float printSpeedFactor = 0.1f;
 
@@ -80,23 +81,26 @@ public class Printer : MonoBehaviour {
 	}
 
 	public void StartPrint(){
-		startTime = Time.time;
-		printActive = true;
+		if(!printActive){
+			startTime = Time.time;
+			printActive = true;
 
-		GameObject obj = Instantiate (blanket);
+			GameObject obj = Instantiate (blanket);
 
-		int id = 0;
+			int id = -1;
 
-		string text = json.GetTask (out id);
+			string text = json.GetTask (out id);
 
-		newTask = obj.GetComponent<DocumentController> ();
+			newTask = obj.GetComponent<DocumentController> ();
 
-		newTask.SetText (id, text);
+			newTask.SetText (id, text);
 
-		newTask.transform.position = first.position;
+			newTask.transform.position = first.position;
 
-		//TODO
-		//newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
+			newTask.scoreTrack = scoreCont;
 
+			//TODO
+			//newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
+		}
 	}
 }

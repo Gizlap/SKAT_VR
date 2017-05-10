@@ -1,7 +1,14 @@
 {
-	"list": [{
+	"list": [
+	{
 		"id": 0,
 		"answer": true,
 		"text": "Skal der udbetales 10 mio til Svindell og Søn ApS?"
-	}]
+	},
+	{
+		"id":---,
+		"answer": true/false,
+		"text": "*text*"
+	}	
+	]
 }

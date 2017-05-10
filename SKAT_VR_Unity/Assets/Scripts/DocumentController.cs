@@ -31,8 +31,7 @@ public class DocumentController : MonoBehaviour {
 	 */
 	public void DisableStamping(){
 		stampable = false;
-		//TODO
-		//scoreTrack.AddScore (stampStatus, documentId);
+		scoreTrack.AddScore (stampStatus, documentId);
 	}
 
 	public void EnableStamping(){
@@ -72,14 +71,9 @@ public class DocumentController : MonoBehaviour {
 
 			stamp.transform.parent = this.transform;
 
-			//plane.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.01f, stampPos.z);
 			stamp.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.005f, stampPos.z);
 			stamp.transform.Rotate(new Vector3(270f, 180f, 0f));
 			stamp.transform.localScale = new Vector3 (0.39f, 1f, 0.26f);
-
-			//PrintObject.StartPrint ();
-
-			//plane.gameObject.SetActive (true);
 		}
 	}
 
