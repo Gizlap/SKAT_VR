@@ -24,6 +24,8 @@ public class GameLoopController : MonoBehaviour {
 	void Start () {
 		currentIntervalBetweenTasks = timeIntervalBetweenTasks;
 		currentGameTime = gameTime;
+
+		videoScreen.endVideo += IntroEnd;
 	}
 	
 	// Update is called once per frame
@@ -50,6 +52,11 @@ public class GameLoopController : MonoBehaviour {
 	}
 
 	public void TaskStamped(){
+
+	}
+
+	public void IntroEnd(){
+		introPlaying = false;
 
 	}
 }

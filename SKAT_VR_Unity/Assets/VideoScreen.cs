@@ -6,6 +6,18 @@ public class VideoScreen : MonoBehaviour {
 
 	public MeshRenderer screen;
 
+	public Material IntroVid;
+	public Material hurry1;
+	public Material hurry2;
+	public Material hurry3;
+	public Material SkatBlank;
+
+	public GameLoopController gControl;
+
+	public MovieEnd endVideo;
+
+	private bool videoPlaying = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +28,21 @@ public class VideoScreen : MonoBehaviour {
 	}
 
 	public void PlayIntro(){
-		((MovieTexture)screen.material.mainTexture).Play ();
+		if (!videoPlaying) {
+			screen.material = IntroVid;
+			((MovieTexture)screen.material.mainTexture).Play ();
+			videoPlaying = true;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (videoPlaying && !((MovieTexture)screen.material.mainTexture).isPlaying) {
+			endVideo ();
+			screen.material = SkatBlank;
+			videoPlaying = false;
+		}
 	}
 }
+
+public delegate void MovieEnd();
