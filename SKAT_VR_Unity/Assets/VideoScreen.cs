@@ -12,8 +12,6 @@ public class VideoScreen : MonoBehaviour {
 	public Material hurry3;
 	public Material SkatBlank;
 
-	public GameLoopController gControl;
-
 	public MovieEnd endVideo;
 
 	private bool videoPlaying = false;
@@ -24,7 +22,6 @@ public class VideoScreen : MonoBehaviour {
 	}
 
 	void Awake () {
-		PlayIntro ();
 	}
 
 	public void PlayIntro(){

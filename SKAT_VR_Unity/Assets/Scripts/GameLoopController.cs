@@ -6,6 +6,7 @@ public class GameLoopController : MonoBehaviour {
 
 	public float gameTime = 60.0f;
 	public float timeIntervalBetweenTasks = 3.0f;
+	public float timeBeforeNextPrintStarts = 0.5f;
 	public float taskAcceleration = 0.01f; //Lerped per second
 	public bool autoNewTasksOnCompletion = false;
 
@@ -24,38 +25,53 @@ public class GameLoopController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentIntervalBetweenTasks = timeIntervalBetweenTasks;
+		//currentIntervalBetweenTasks = 
 		currentGameTime = gameTime;
-		timeUntilNextTask = currentIntervalBetweenTasks;
+		timeUntilNextTask = timeIntervalBetweenTasks;
 
 		pControl.taskSpeed = taskAcceleration;
+		pControl.totalPrintTime = timeIntervalBetweenTasks-timeBeforeNextPrintStarts;
+		pControl.SetMoveTime ();
 
 		videoScreen.endVideo += IntroEnd;
+
+
+	}
+
+	void Awake(){
+		if (playIntroVideo) {
+			videoScreen.PlayIntro ();
+			introPlaying = true;
+		} else {
+			introPlaying = false;
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+
 		if (introPlaying) 
 		{
-			introPlaying = false;
+			
 			//Intro running
 			//Do nothing more
 		}
 		else if(currentGameTime > 0f)
 		{
-			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, currentIntervalBetweenTasks));
+			pControl.Activate();
+			Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
 
 
 			//Game running
 			timeUntilNextTask -= Time.deltaTime;
 			if (timeUntilNextTask <= 0f) {
 				pControl.StartPrint();
-				timeUntilNextTask = currentIntervalBetweenTasks;
+				timeUntilNextTask = timeIntervalBetweenTasks;
 			}
 
-			//Speed adjestment
-			currentIntervalBetweenTasks = timeIntervalBetweenTasks-((gameTime - currentGameTime)*taskAcceleration);
-			pControl.taskSpeed += taskAcceleration * Time.deltaTime;
+			//Speed adjastment
+			timeIntervalBetweenTasks =  timeIntervalBetweenTasks / (1 + (taskAcceleration * Time.deltaTime));
 
 			//updateTime
 			currentGameTime -= Time.deltaTime;

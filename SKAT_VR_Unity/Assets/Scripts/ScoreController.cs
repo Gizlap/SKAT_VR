@@ -14,6 +14,9 @@ public class ScoreController : MonoBehaviour {
 
 	public Printer printController;
 
+	public int lowScore;
+	public int highScore;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -37,5 +40,15 @@ public class ScoreController : MonoBehaviour {
 		Debug.Log(string.Format("Player score is {0}", Score));
 
 		printController.StartPrint ();
+	}
+
+	public ScoreEnum GetScoreResult(){
+		if (Score > highScore) {
+			return ScoreEnum.High;
+		} else if (Score > lowScore) {
+			return ScoreEnum.Medium;
+		} else {
+			return ScoreEnum.Low;
+		}
 	}
 }
