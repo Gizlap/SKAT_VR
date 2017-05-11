@@ -13,8 +13,8 @@ public class GameLoopController : MonoBehaviour {
 	public bool playIntroVideo = true;
 
 
-	public Printer pControl;
-	public VideoScreen videoScreen;
+	public PrintController pControl;
+	public VideoController videoScreen;
 
 	private float currentIntervalBetweenTasks;
 	private float currentGameTime;
@@ -33,14 +33,14 @@ public class GameLoopController : MonoBehaviour {
 		pControl.totalPrintTime = timeIntervalBetweenTasks-timeBeforeNextPrintStarts;
 		pControl.SetMoveTime ();
 
-		videoScreen.endVideo += IntroEnd;
+		videoScreen.endVideo += VideoEnd;
 
 
 	}
 
 	void Awake(){
 		if (playIntroVideo) {
-			videoScreen.PlayIntro ();
+			videoScreen.PlayVideo (Video.Intro);
 			introPlaying = true;
 		} else {
 			introPlaying = false;
@@ -86,7 +86,12 @@ public class GameLoopController : MonoBehaviour {
 
 	}
 
-	public void IntroEnd(){
-		introPlaying = false;
+	public void VideoEnd(Video vid){
+		switch (vid){
+		case (Video.Intro):
+			introPlaying = false;
+			break;
+		
+		}
 	}
 }

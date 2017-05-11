@@ -1113,7 +1113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskList: {fileID: 206377265}
-  printController: {fileID: 955513296}
   lowScore: 33
   highScore: 66
 --- !u!4 &206377264
@@ -1156,7 +1155,7 @@ MonoBehaviour:
   timeBeforeNextPrintStarts: 0.5
   taskAcceleration: 0.01
   autoNewTasksOnCompletion: 1
-  playIntroVideo: 0
+  playIntroVideo: 1
   pControl: {fileID: 955513296}
   videoScreen: {fileID: 650177887}
   introPlaying: 1
@@ -2710,6 +2709,7 @@ MonoBehaviour:
   hurry2: {fileID: 2100000, guid: 8cbbebcc8d7bb5747881dbcdf494510f, type: 2}
   hurry3: {fileID: 2100000, guid: d4785f64c05491648b44a43876f99a2a, type: 2}
   SkatBlank: {fileID: 2100000, guid: 8d00e8102d78fb84eb9e90939f690d13, type: 2}
+  Illegal: {fileID: 0}
   EndBad: {fileID: 2100000, guid: 8fc8a9d6a42fa004cba0f7c96cea38ae, type: 2}
   EndOkay: {fileID: 2100000, guid: 81925095ff321c441a5fd1334c6a5584, type: 2}
   EndGood: {fileID: 2100000, guid: 54e673d3b41dbb0409bc36fb47f85375, type: 2}
@@ -4314,7 +4314,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 955513292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b28888aea4cebd846bd3fc2b809cf830, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d9ccdc8b61662840aeaa821c492875c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blanket: {fileID: 1645934092372694, guid: 867022707fac11c4eb42cd49b675bdd7, type: 2}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Printer : MonoBehaviour {
+public class PrintController : MonoBehaviour {
 
 	public GameObject blanket;
 

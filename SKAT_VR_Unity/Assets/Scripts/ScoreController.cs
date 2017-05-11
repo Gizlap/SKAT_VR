@@ -12,8 +12,6 @@ public class ScoreController : MonoBehaviour {
 
 	public JsonController taskList;
 
-	public Printer printController;
-
 	public int lowScore;
 	public int highScore;
 
@@ -32,14 +30,13 @@ public class ScoreController : MonoBehaviour {
 	}
 
 	public void AddScore(StampVariation stampResult, int docId){
-		bool success = taskList.Evaluate(docId, stampResult);
-		if (success) {
-			Score++;
+		if (stampResult != StampVariation.NoStamp) {
+			if (taskList.Evaluate(docId, stampResult)) {
+				Score++;
+			}
 		}
 
 		Debug.Log(string.Format("Player score is {0}", Score));
-
-		printController.StartPrint ();
 	}
 
 	public ScoreEnum GetScoreResult(){

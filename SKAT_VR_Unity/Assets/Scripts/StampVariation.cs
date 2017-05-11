@@ -3,6 +3,6 @@
 
 public enum StampVariation
 {
-	Approved, Denied
+	Approved, Denied, NoStamp
 }
 

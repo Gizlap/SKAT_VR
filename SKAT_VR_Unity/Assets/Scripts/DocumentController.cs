@@ -19,7 +19,7 @@ public class DocumentController : MonoBehaviour {
 
 	public ScoreController scoreTrack;
 
-	private StampVariation stampStatus;
+	private StampVariation stampStatus = StampVariation.NoStamp;
 
 	// Use this for initialization
 	void Start () {
