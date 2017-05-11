@@ -19,7 +19,7 @@ public class DocumentController : MonoBehaviour {
 
 	public ScoreController scoreTrack;
 
-	private StampVariation stampStatus;
+	private StampVariation stampStatus = StampVariation.NoStamp;
 
 	// Use this for initialization
 	void Start () {
@@ -47,8 +47,6 @@ public class DocumentController : MonoBehaviour {
 	public void OnTriggerEnter(Collider other)
 	{
 		Debug.Log(string.Format("TriggerEnter{0}", ""));
-		//stampDetect.LightUp((accept_field?right:left));
-		//stampDetect.other.transform.position
 
 		Stamp stampedStamp = other.GetComponent<Stamp> ();
 		if (stampable && stampedStamp != null) {
@@ -58,14 +56,14 @@ public class DocumentController : MonoBehaviour {
 			GameObject stamp;
 			if (stampedStamp.variation == StampVariation.Approved) {
 				stamp = Instantiate (AppPrefab);
-				//plane.material = AppTexture;
 			} else if (stampedStamp.variation == StampVariation.Denied) {
 				stamp = Instantiate (DenPrefab);
-				//plane.material = DenTexture;
 			} else {
+				//this would be an error
 				stamp = null;
 			}
 
+			stampedStamp.audSrc.Play ();
 
 			Vector3 stampPos = other.transform.position;
 
