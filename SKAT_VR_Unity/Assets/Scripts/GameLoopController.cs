@@ -14,12 +14,14 @@ public class GameLoopController : MonoBehaviour {
 
 
 	public PrintController pControl;
-	public VideoController videoScreen;
+	public VideoController vControl;
+	public ScoreController sControl;
 
 	private float currentIntervalBetweenTasks;
 	private float currentGameTime;
 
 	public bool introPlaying = true;
+	public bool gameEndActivated = false;
 
 	private float timeUntilNextTask;
 
@@ -33,14 +35,14 @@ public class GameLoopController : MonoBehaviour {
 		pControl.totalPrintTime = timeIntervalBetweenTasks-timeBeforeNextPrintStarts;
 		pControl.SetMoveTime ();
 
-		videoScreen.endVideo += VideoEnd;
+		vControl.endVideo += VideoEnd;
 
 
 	}
 
 	void Awake(){
 		if (playIntroVideo) {
-			videoScreen.PlayVideo (Video.Intro);
+			vControl.PlayVideo (Video.Intro);
 			introPlaying = true;
 		} else {
 			introPlaying = false;
@@ -78,8 +80,37 @@ public class GameLoopController : MonoBehaviour {
 		}
 		else
 		{
+			if (!gameEndActivated) {
+				ActivateGameEnd ();
+				gameEndActivated = true;
+			}
+
+
+
 			//Game over
 		}
+	}
+
+	void ActivateGameEnd ()
+	{
+		ScoreEnum s = sControl.GetScoreResult ();
+		switch (s) {
+		case ScoreEnum.High:
+			vControl.PlayVideo (Video.EndGood);
+			break;
+		case ScoreEnum.Medium:
+			vControl.PlayVideo (Video.EndNeutral);
+			break;
+		case ScoreEnum.Low:
+			vControl.PlayVideo (Video.EndBad);
+			break;
+		}
+
+		//TODO
+
+		//Disable Currently active documents
+
+		//Disable Controller
 	}
 
 	public void TaskStamped(){
