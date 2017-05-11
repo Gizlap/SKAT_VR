@@ -12,6 +12,10 @@ public class VideoScreen : MonoBehaviour {
 	public Material hurry3;
 	public Material SkatBlank;
 
+	public Material EndBad;
+	public Material EndOkay;
+	public Material EndGood;
+
 	public MovieEnd endVideo;
 
 	private bool videoPlaying = false;
