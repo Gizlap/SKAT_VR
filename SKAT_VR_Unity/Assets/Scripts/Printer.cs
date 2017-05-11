@@ -26,11 +26,8 @@ public class Printer : MonoBehaviour {
 	DocumentController newTask;
 	public DocumentController activeDocument;
 
-	//private float journeyLengthFirst;
-	//private float journeyLengthSecond;
-
 	private bool printActive = false;
-	private bool firstPrint = true;
+	//private bool firstPrint = true;
 	private bool activeSwitched = false;
 
 	// Use this for initialization
@@ -44,10 +41,10 @@ public class Printer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > 1f && firstPrint) {
+		/*if (Time.time > 1f && firstPrint) {
 			StartPrint ();
 			firstPrint = false;
-		}
+		}*/
 
 		if (printActive) {
 			curTime = Time.time;

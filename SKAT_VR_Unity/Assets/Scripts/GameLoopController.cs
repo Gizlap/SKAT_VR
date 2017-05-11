@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameLoopController : MonoBehaviour {
 
 	public float gameTime = 60.0f;
-	public float timeIntervalBetweenTasks = 2.0f;
+	public float timeIntervalBetweenTasks = 1.0f;
 	public float taskAcceleration = 0.01f; //Lerped per second
 	public bool autoNewTasksOnCompletion = true;
 
@@ -20,10 +20,13 @@ public class GameLoopController : MonoBehaviour {
 
 	public bool introPlaying = true;
 
+	private float timeUntilNextTask;
+
 	// Use this for initialization
 	void Start () {
 		currentIntervalBetweenTasks = timeIntervalBetweenTasks;
 		currentGameTime = gameTime;
+		timeUntilNextTask = currentIntervalBetweenTasks;
 
 		videoScreen.endVideo += IntroEnd;
 	}
@@ -32,14 +35,24 @@ public class GameLoopController : MonoBehaviour {
 	void Update () {
 		if (introPlaying) 
 		{
+			introPlaying = false;
 			//Intro running
+			//Do nothing more
 		}
 		else if(currentGameTime > 0f)
 		{
+			Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, currentIntervalBetweenTasks));
+
+
 			//Game running
+			timeUntilNextTask -= Time.deltaTime;
+			if (timeUntilNextTask <= 0f) {
+				pControl.StartPrint();
+				timeUntilNextTask = currentIntervalBetweenTasks;
+			}
 
 			//Speed adjestment
-			currentIntervalBetweenTasks = timeIntervalBetweenTasks*((gameTime - currentGameTime)*taskAcceleration);
+			currentIntervalBetweenTasks = timeIntervalBetweenTasks-((gameTime - currentGameTime)*taskAcceleration);
 			pControl.speed += taskAcceleration * Time.deltaTime;
 
 			//updateTime
@@ -57,6 +70,5 @@ public class GameLoopController : MonoBehaviour {
 
 	public void IntroEnd(){
 		introPlaying = false;
-
 	}
 }
