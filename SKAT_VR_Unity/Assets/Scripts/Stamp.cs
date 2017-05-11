@@ -8,6 +8,8 @@ public class Stamp : MonoBehaviour {
 
 	public StampVariation variation;
 
+	public AudioSource audSrc;
+
 	private SteamVR_Controller.Device Controller
 	{
 		get { return SteamVR_Controller.Input((int)trackedObj.index); }
