@@ -15,20 +15,23 @@ public class Printer : MonoBehaviour {
 	public Transform second;
 	public Transform third;
 	public Transform final;
+	public Transform revPos;
 
-	public float speed;
+	public float taskSpeed;
 	public float firstMove;
 	public float secondMove;
 	public float thirdMove;
 	private float startTime;
-	private float curTime;
 
 	DocumentController newTask;
 	public DocumentController activeDocument;
 
 	private bool printActive = false;
-	//private bool firstPrint = true;
-	private bool activeSwitched = false;
+	private bool disabledPrevious = false;
+
+	private float firstMoveCur;
+	private float secondMoveCur;
+	private float thirdMoveCur;
 
 	// Use this for initialization
 	void Start () {
@@ -41,39 +44,53 @@ public class Printer : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		firstMove = firstMove / (1 + (taskSpeed * Time.deltaTime));
+		secondMove = secondMove / (1 + (taskSpeed * Time.deltaTime));
+		thirdMove = thirdMove / (1 + (taskSpeed * Time.deltaTime));
+
 		/*if (Time.time > 1f && firstPrint) {
 			StartPrint ();
 			firstPrint = false;
 		}*/
 
 		if (printActive) {
-			curTime = Time.time;
-			float t = curTime - startTime;
+			float t = Time.time - startTime;
 			//Debug.Log(string.Format("t: {0}", t));
+			float curT = 0f;
 			if(t <= firstMove) {
-				newTask.transform.position = Vector3.Lerp(first.position, second.position, (t/(firstMove*speed)));
-				newTask.transform.rotation = Quaternion.Lerp (first.rotation, second.rotation, (t/(firstMove*speed)));
-			} else if (t <= secondMove + firstMove) {
-				newTask.transform.position = Vector3.Lerp (second.position, third.position, ((t - (firstMove)) / (secondMove*speed)));					
-				newTask.transform.rotation = Quaternion.Lerp (second.rotation, third.rotation, ((t - (firstMove)) / (secondMove*speed)));
-			} else if (t <= secondMove + firstMove + thirdMove) {
-				newTask.transform.position = Vector3.Lerp (third.position, final.position, ((t - (firstMove+secondMove)) / (thirdMove*speed)));
-				newTask.transform.rotation = Quaternion.Lerp (third.rotation, final.rotation, ((t - (firstMove+secondMove)) / (thirdMove*speed)));
+				curT = t / firstMove;
+				newTask.transform.position = Vector3.Lerp(first.position, second.position, curT);
+				newTask.transform.rotation = Quaternion.Lerp (first.rotation, second.rotation, curT);
+			} else if (t <= firstMove + secondMove) {
+				curT = (t - (firstMove)) / secondMove;
+				newTask.transform.position = Vector3.Lerp (second.position, third.position, curT);					
+				newTask.transform.rotation = Quaternion.Lerp (second.rotation, third.rotation, curT);
+			} else if (t <= firstMove + secondMove + thirdMove) {
+				curT = (t - (firstMove + secondMove)) / thirdMove;
+				newTask.transform.position = Vector3.Lerp (third.position, final.position, curT);
+				newTask.transform.rotation = Quaternion.Lerp (third.rotation, final.rotation, curT);
 
-				if (!activeSwitched) {
+				if (!disabledPrevious) {
 					//switch moving paper to active for stamping and current paper to non-active.
 					if (activeDocument != null) {
 						activeDocument.DisableStamping ();
 					}
-					activeDocument = newTask.GetComponent<DocumentController> ();
 
-					activeSwitched = true;
+					disabledPrevious = true;
 				}
 			} else {
-				activeDocument.EnableStamping ();
+				newTask.transform.position = final.position;
+				newTask.transform.rotation = final.rotation;
+				newTask.EnableStamping ();
+
+				activeDocument.transform.position = revPos.position;
+
+				activeDocument = newTask.GetComponent<DocumentController> ();
+
 				printActive = false;
-				activeSwitched = false;
+				disabledPrevious = false;
 			}
+			Debug.Log(curT);
 		}
 	}
 
