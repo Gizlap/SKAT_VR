@@ -11,6 +11,7 @@ public class MovieRun : MonoBehaviour {
 
 	void Awake(){
 		((MovieTexture)GetComponent<Renderer> ().material.mainTexture).Play ();
+	
 	}
 	
 	// Update is called once per frame

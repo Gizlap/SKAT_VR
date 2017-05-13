@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: glass_wind
-  m_Shader: {fileID: 4800000, guid: b08cf5a111d0d77479c9f5d8c85b4935, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: 3000
@@ -117,7 +117,13 @@ Material:
         name: _Gloss
       second: 1
     - first:
+        name: _GlossMapScale
+      second: 1
+    - first:
         name: _Glossiness
+      second: 1
+    - first:
+        name: _GlossyReflections
       second: 1
     - first:
         name: _Metallic
@@ -140,6 +146,12 @@ Material:
     - first:
         name: _Shininess
       second: 0.078125
+    - first:
+        name: _SmoothnessTextureChannel
+      second: 0
+    - first:
+        name: _SpecularHighlights
+      second: 1
     - first:
         name: _SrcBlend
       second: 5
