@@ -2,27 +2,27 @@
 	"list": [{
 			"id": 0,
 			"answer": false,
-			"text": "Skal der udbetales 10 mio til Svindell og S¿n ApS? Godkendt/Afvist"
+			"text": "Skal der udbetales 10 mio til Svindell og Søn ApS? Godkendt/Afvist"
 		},
 		{
 			"id": 1,
 			"answer": false,
-			"text": "Skal vi godkende udbetalingen pŒ 20 millioner for negativ moms til Candy og Co for 10. Œr i tr¾k? Godkendt/Afvist"
+			"text": "Skal vi godkende udbetalingen på 20 millioner for negativ moms til Candy og Co for 10. år i træk? Godkendt/Afvist"
 		},
 		{
 			"id": 2,
 			"answer": false,
-			"text": "MŒ Scientology tr¾kke regningen fra Hooters fra? Godkendt/Afvist"
+			"text": "Må Scientology trække regningen fra Hooters fra? Godkendt/Afvist"
 		},
 		{
 			"id": 3,
 			"answer": true,
-			"text": "Bente Blomst I/S anmoder om at fratr¾kke sine husleje udgifter, som er afholdt seks mŒneder f¿r virksomheden startede? Godkendt/Afvist"
+			"text": "Bente Blomst I/S anmoder om at fratrække sine husleje-udgifter, som er afholdt seks måneder før virksomheden startede? Godkendt/Afvist"
 		},
 		{
 			"id": 4,
 			"answer": false,
-			"text": "Telefonfis ApS anmoder om undgŒ at betale skat af fri telefon, da de driver deres virksomhed fra privat bolig. Godkendt/Afvist"
+			"text": "Telefonfis ApS anmoder om undgå at betale skat af fri telefon, da de driver deres virksomhed fra privat bolig. Godkendt/Afvist"
 		},
 		{
 			"id": 5,
@@ -32,47 +32,47 @@
 		{
 			"id": 6,
 			"answer": true,
-			"text": "Skal selskabet Rettidig Omhu I/S betale et skattetill¾g pŒ 200 kr. om dagen, hvis selskabet ikke selvangiver til tiden?"
+			"text": "Skal selskabet Rettidig Omhu I/S betale et skattetillæg på 200 kr. om dagen, hvis selskabet ikke selvangiver til tiden?"
 		},
 		{
 			"id": 7,
 			"answer": true,
-			"text": "MŒ S¿borg kommune selv inddrive g¾ld vedr¿rende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2017?"
+			"text": "Må Søborg kommune selv inddrive gæld vedrårende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2017?"
 		},
 		{
 			"id": 8,
 			"answer": false,
-			"text": "MŒ Gentofte kommune selv inddrive g¾ld vedr¿rende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2016?"
+			"text": "Må Gentofte kommune selv inddrive gæld vedrårende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2016?"
 		},
 		{
 			"id": 9,
 			"answer": false,
-			"text": "MŒ escortservice firmaet Pleasure Pernille I/S tr¾kke udgiften til silikonebrysterne fra?"
-		}
+			"text": "Må escortservice firmaet Pleasure Pernille I/S trække udgiften til silikonebrysterne fra?"
+		},
 		{
 			"id": 10,
 			"answer": false,
-			"text": "Skal vi godkende udbetalingen af 100.000 kr. i eksportgodtg¿relse til Skrammel og Co for en Toyota Yaris eksporteret til Polen?"
-		}
+			"text": "Skal vi godkende udbetalingen af 100.000 kr. i eksportgodtgårelse til Skrammel og Co for en Toyota Yaris eksporteret til Polen?"
+		},
 		{
 			"id": 11,
 			"answer": true,
-			"text": "Skal vi beskatte et maleri af Rembrandt, som fru. Jensen gav sin datter et Œr inden hendes d¿d?"
-		}
+			"text": "Skal vi beskatte et maleri af Rembrandt, som fru. Jensen gav sin datter et år inden hendes dåb?"
+		},
 		{
 			"id": 12,
 			"answer": false,
-			"text": "MŒ du som medarbejder i SKAT tage imod fribilletter til Roskilde Festival, hvis du har f¿dselsdag?"
-		}
+			"text": "Må du som medarbejder i SKAT tage imod fribilletter til Roskilde Festival, hvis du har fødselsdag?"
+		},
 		{
 			"id": 13,
 			"answer": false,
-			"text": "MŒ du som medarbejder i SKAT tage imod fribilletter til Roskilde Festival, hvis du har f¿dselsdag?"
-		}
+			"text": "Må du som medarbejder i SKAT tage imod fribilletter til Roskilde Festival, hvis du har fødselsdag?"
+		},
 		{
-			"id": 13,
+			"id": 14,
 			"answer": false,
-			"text": "MŒ du som medarbejder i SKAT tage imod fribilletter til Roskilde Festival, hvis du har f¿dselsdag?"
+			"text": "Må du som medarbejder i SKAT tage imod fribilletter til Roskilde Festival, hvis du har fødselsdag?"
 		}
 	]
 }

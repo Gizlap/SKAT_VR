@@ -62,7 +62,7 @@ public class GameLoopController : MonoBehaviour {
 		else if(currentGameTime > 0f)
 		{
 			pControl.Activate();
-			Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
+			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
 
 
 			//Game running

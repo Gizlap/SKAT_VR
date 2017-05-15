@@ -70,7 +70,7 @@ public class DocumentController : MonoBehaviour {
 
 			stamp.transform.parent = this.transform;
 
-			stamp.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.005f, stampPos.z);
+			stamp.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.0005f, stampPos.z);
 			stamp.transform.Rotate(new Vector3(270f, 180f, 0f));
 			stamp.transform.localScale = new Vector3 (0.39f, 1f, 0.26f);
 		}
