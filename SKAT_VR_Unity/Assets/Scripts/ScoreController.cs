@@ -30,7 +30,7 @@ public class ScoreController : MonoBehaviour {
 	}
 
 	public void AddScore(StampVariation stampResult, int docId){
-		if (stampResult != StampVariation.NoStamp) {
+		if (stampResult != StampVariation.NoStamp && docId >= 0) {
 			if (taskList.Evaluate(docId, stampResult)) {
 				Score++;
 			}

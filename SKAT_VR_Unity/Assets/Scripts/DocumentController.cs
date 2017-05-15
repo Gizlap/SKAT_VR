@@ -13,17 +13,17 @@ public class DocumentController : MonoBehaviour {
 
 	public bool stampable = false;
 
-	private bool stamped = false;
+	public bool stamped = false;
 
 	public int documentId = -1;
 
 	public ScoreController scoreTrack;
 
-	private StampVariation stampStatus = StampVariation.NoStamp;
+	public StampVariation StampStatus { get; private set; }
 
 	// Use this for initialization
 	void Start () {
-		
+		StampStatus = StampVariation.NoStamp;
 	}
 
 	/**
@@ -31,7 +31,7 @@ public class DocumentController : MonoBehaviour {
 	 */
 	public void DisableStamping(){
 		stampable = false;
-		scoreTrack.AddScore (stampStatus, documentId);
+		scoreTrack.AddScore (StampStatus, documentId);
 	}
 
 	public void EnableStamping(){
@@ -50,7 +50,7 @@ public class DocumentController : MonoBehaviour {
 
 		Stamp stampedStamp = other.GetComponent<Stamp> ();
 		if (stampable && stampedStamp != null) {
-			stampStatus = stampedStamp.variation;
+			StampStatus = stampedStamp.variation;
 			stamped = true;
 
 			GameObject stamp;
@@ -64,12 +64,13 @@ public class DocumentController : MonoBehaviour {
 			}
 
 			stampedStamp.audSrc.Play ();
+			stampedStamp.Shake ();
 
 			Vector3 stampPos = other.transform.position;
 
 			stamp.transform.parent = this.transform;
 
-			stamp.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.005f, stampPos.z);
+			stamp.transform.position = new Vector3(stampPos.x, this.transform.position.y+0.0005f, stampPos.z);
 			stamp.transform.Rotate(new Vector3(270f, 180f, 0f));
 			stamp.transform.localScale = new Vector3 (0.39f, 1f, 0.26f);
 		}

@@ -16,11 +16,14 @@ public class GameLoopController : MonoBehaviour {
 	public PrintController pControl;
 	public VideoController vControl;
 	public ScoreController sControl;
+	public RadioController rControl;
+	public TutorialController tControl;
 
 	private float currentIntervalBetweenTasks;
 	private float currentGameTime;
 
 	public bool introPlaying = true;
+	public bool tutorialTime = false;
 	public bool gameEndActivated = false;
 
 	private float timeUntilNextTask;
@@ -55,14 +58,26 @@ public class GameLoopController : MonoBehaviour {
 
 		if (introPlaying) 
 		{
-			
 			//Intro running
 			//Do nothing more
+		} 
+		else if (!tControl.TutorialComplete) 
+		{
+
+			rControl.beginSounds ();
+			tControl.StartTutorial ();
+
+			//tutorial.
+			//Print out paper with basic instructions
+
+			//Print out paper that have to be stamped Godkendt
+
+			//Print out paper that have to be stamped Rejected
 		}
 		else if(currentGameTime > 0f)
 		{
 			pControl.Activate();
-			Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
+			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
 
 
 			//Game running
@@ -84,8 +99,6 @@ public class GameLoopController : MonoBehaviour {
 				ActivateGameEnd ();
 				gameEndActivated = true;
 			}
-
-
 
 			//Game over
 		}
@@ -117,10 +130,12 @@ public class GameLoopController : MonoBehaviour {
 
 	}
 
+
 	public void VideoEnd(Video vid){
 		switch (vid){
 		case (Video.Intro):
 			introPlaying = false;
+			tutorialTime = true;
 			break;
 		
 		}

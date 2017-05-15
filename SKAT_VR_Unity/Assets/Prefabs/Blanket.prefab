@@ -402,4 +402,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 102602642725534938}
-  letterLimit: 32
+  letterLimit: 28
