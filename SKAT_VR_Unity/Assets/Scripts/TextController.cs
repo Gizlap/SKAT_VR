@@ -7,7 +7,7 @@ public class TextController : MonoBehaviour {
 
 	public TextMesh textField;
 
-	public int letterLimit = 30;
+	public int letterLimit;
 
 	// Use this for initialization
 	void Start () {

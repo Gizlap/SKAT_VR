@@ -17,6 +17,7 @@ public class GameLoopController : MonoBehaviour {
 	public VideoController vControl;
 	public ScoreController sControl;
 	public RadioController rControl;
+	public TutorialController tControl;
 
 	private float currentIntervalBetweenTasks;
 	private float currentGameTime;
@@ -26,11 +27,6 @@ public class GameLoopController : MonoBehaviour {
 	public bool gameEndActivated = false;
 
 	private float timeUntilNextTask;
-
-
-	private bool taskOne = false;
-	private bool taskTwo = false;
-	private bool taskThree = false;
 
 	// Use this for initialization
 	void Start () {
@@ -60,13 +56,16 @@ public class GameLoopController : MonoBehaviour {
 	void Update () {
 		
 
-		if (introPlaying) {
-			
+		if (introPlaying) 
+		{
 			//Intro running
 			//Do nothing more
-		} else if (tutorialTime) {
+		} 
+		else if (!tControl.TutorialComplete) 
+		{
 
-			Tutorial ();
+			rControl.beginSounds ();
+			tControl.StartTutorial ();
 
 			//tutorial.
 			//Print out paper with basic instructions
@@ -74,14 +73,10 @@ public class GameLoopController : MonoBehaviour {
 			//Print out paper that have to be stamped Godkendt
 
 			//Print out paper that have to be stamped Rejected
-
-
 		}
-
 		else if(currentGameTime > 0f)
 		{
 			pControl.Activate();
-			rControl.beginSounds ();
 			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
 
 
@@ -104,8 +99,6 @@ public class GameLoopController : MonoBehaviour {
 				ActivateGameEnd ();
 				gameEndActivated = true;
 			}
-
-
 
 			//Game over
 		}
@@ -137,33 +130,6 @@ public class GameLoopController : MonoBehaviour {
 
 	}
 
-	private void Tutorial(){
-		if (!taskOne) 
-		{
-			
-			//temp
-			taskOne = true;
-		} 
-		else if (!taskTwo) 
-		{
-
-			//temp
-			taskTwo = true;
-		} 
-		else if (!taskThree) 
-		{
-
-			//temp
-			taskThree = true;
-		}
-
-
-
-
-		if (taskOne && taskTwo && taskThree) {
-			tutorialTime = false;
-		}
-	}
 
 	public void VideoEnd(Video vid){
 		switch (vid){
