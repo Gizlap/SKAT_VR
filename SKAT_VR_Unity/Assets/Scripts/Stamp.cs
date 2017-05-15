@@ -25,6 +25,11 @@ public class Stamp : MonoBehaviour {
 		trackedObj = GetComponent<SteamVR_TrackedObject>();
 	}
 
+	public void Shake (){
+		Controller.TriggerHapticPulse (3999);
+		//Controller.
+	}
+
 
 	
 	// Update is called once per frame

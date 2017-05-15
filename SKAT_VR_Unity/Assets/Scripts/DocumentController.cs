@@ -64,6 +64,7 @@ public class DocumentController : MonoBehaviour {
 			}
 
 			stampedStamp.audSrc.Play ();
+			stampedStamp.Shake ();
 
 			Vector3 stampPos = other.transform.position;
 
