@@ -16,14 +16,21 @@ public class GameLoopController : MonoBehaviour {
 	public PrintController pControl;
 	public VideoController vControl;
 	public ScoreController sControl;
+	public RadioController rControl;
 
 	private float currentIntervalBetweenTasks;
 	private float currentGameTime;
 
 	public bool introPlaying = true;
+	public bool tutorialTime = false;
 	public bool gameEndActivated = false;
 
 	private float timeUntilNextTask;
+
+
+	private bool taskOne = false;
+	private bool taskTwo = false;
+	private bool taskThree = false;
 
 	// Use this for initialization
 	void Start () {
@@ -53,15 +60,28 @@ public class GameLoopController : MonoBehaviour {
 	void Update () {
 		
 
-		if (introPlaying) 
-		{
+		if (introPlaying) {
 			
 			//Intro running
 			//Do nothing more
+		} else if (tutorialTime) {
+
+			Tutorial ();
+
+			//tutorial.
+			//Print out paper with basic instructions
+
+			//Print out paper that have to be stamped Godkendt
+
+			//Print out paper that have to be stamped Rejected
+
+
 		}
+
 		else if(currentGameTime > 0f)
 		{
 			pControl.Activate();
+			rControl.beginSounds ();
 			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
 
 
@@ -117,10 +137,39 @@ public class GameLoopController : MonoBehaviour {
 
 	}
 
+	private void Tutorial(){
+		if (!taskOne) 
+		{
+			
+			//temp
+			taskOne = true;
+		} 
+		else if (!taskTwo) 
+		{
+
+			//temp
+			taskTwo = true;
+		} 
+		else if (!taskThree) 
+		{
+
+			//temp
+			taskThree = true;
+		}
+
+
+
+
+		if (taskOne && taskTwo && taskThree) {
+			tutorialTime = false;
+		}
+	}
+
 	public void VideoEnd(Video vid){
 		switch (vid){
 		case (Video.Intro):
 			introPlaying = false;
+			tutorialTime = true;
 			break;
 		
 		}
