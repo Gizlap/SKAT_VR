@@ -16,7 +16,7 @@ public class SceneTransferMovie : MonoBehaviour {
 
     void Awake()
     {
-        ((MovieTexture)GetComponent<Renderer>().material.mainTexture).Play();
+        ((MovieTexture)screen.material.mainTexture).Play();
 
     }
     void Update()
