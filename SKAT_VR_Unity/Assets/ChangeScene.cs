@@ -8,20 +8,22 @@ public class ChangeScene : MonoBehaviour
 
 	void Start()
 	{
-		
+		StartCoroutine ("SwitchScene");
 	}
 
 	void Update ()
 	{
 		
 	}
-	IEnumerator Example()
-	{
-		
-	yield return new WaitForSeconds(5);
-	// Only specifying the sceneName or sceneBuildIndex will load the scene with the Single mode
-	SceneManager.LoadScene("Lydrejse", LoadSceneMode.Single);
 
+	IEnumerator SwitchScene() {
+		float f = 0;
+		while(true) {
+			if(f > 98) break;
+			f = f+Time.deltaTime;
+			yield return null;
+		}
+		SceneManager.LoadScene("Lydrejse", LoadSceneMode.Single);
 	}
 
 }
