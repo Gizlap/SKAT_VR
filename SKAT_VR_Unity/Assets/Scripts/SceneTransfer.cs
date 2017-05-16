@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneTransferMovie : MonoBehaviour {
+public class SceneTransfer : MonoBehaviour {
 
     public Renderer screen;
 
