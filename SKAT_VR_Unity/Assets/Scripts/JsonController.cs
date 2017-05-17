@@ -14,7 +14,7 @@ public class JsonController : MonoBehaviour
 
 	void Awake(){
 		TextAsset ta = (TextAsset)Resources.Load(("documents"), typeof(TextAsset));
-		Debug.Log (ta == null);
+		//Debug.Log (ta == null);
 		//string jsonfile = System.IO.File.ReadAllLines (@"../../../Assets/documents.json");
 		JObject o = JObject.Parse(ta.text);
 		jar = o ["list"] as JArray;
