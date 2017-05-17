@@ -23,7 +23,7 @@ public class TextController : MonoBehaviour {
 	public void SetText(string newText){
 		StringBuilder strB = new StringBuilder ();
 
-		string[] textWords = newText.Split (' ');
+		string[] textWords = newText.Trim().Split (' ');
 		int wCount = 0;
 
 		for (int i = 0; i < textWords.Length; i++) {

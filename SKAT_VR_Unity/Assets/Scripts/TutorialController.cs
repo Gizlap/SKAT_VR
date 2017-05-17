@@ -27,8 +27,8 @@ public class TutorialController : MonoBehaviour {
 
 			if (!firstPrinted) {
 				pControl.Activate ();
-				//pControl.StartPrint ("Daglig Instruktion: Du har et stempel i hver hånd, rød for Afvist og grønt for Godkendt. Stempel papiret ved at føre stemplet imod det. Markér med stemplet om instruks er forstået", -1);
-				pControl.StartPrint("Slide 1: Som sagsbehandler i SKAT, er stemplerne dit vigtigste redskab. Vi godkender og afviser anmodninger. Og vi elsker det! Prøv dine stempler", -1);
+				pControl.StartPrint ("Daglig Instruktion: Du har et stempel i hver hånd, rød for Afvist og grønt for Godkendt. Stempel papiret ved at føre stemplet imod det. Markér med stemplet om instruks er forstået", -1);
+				//pControl.StartPrint("Slide 1: Som sagsbehandler i SKAT, er stemplerne dit vigtigste redskab. Vi godkender og afviser anmodninger. Og vi elsker det! Prøv dine stempler", -1);
 				firstPrinted = true;
 			}
 			
@@ -36,16 +36,16 @@ public class TutorialController : MonoBehaviour {
 				//Instructions, Stamp Anything to continue
 				if (pControl.activeDocument.documentId == -1 && pControl.activeDocument.stamped) {
 					taskOne = true;
-					//pControl.StartPrint ("Opgaver sendes løbende. Godkend dette papir for at fortsætte", -2);
-					pControl.StartPrint ("Slide 2: Fremragende. Prøv nu bare at stemple 'Godkendt'", -2);
+					pControl.StartPrint ("Opgaver sendes løbende. Godkend dette papir for at fortsætte", -2);
+					//pControl.StartPrint ("Slide 2: Fremragende. Prøv nu bare at stemple 'Godkendt'", -2);
 				}
 			} else if (!taskTwo) {
 
 				//Stamp Godkendt to continue
 				if (pControl.activeDocument.documentId == -2 && pControl.activeDocument.StampStatus == StampVariation.Approved) {
 					taskTwo = true;
-					//pControl.StartPrint ("Du vil blive evalueret løbende. Afvis dette papir for at starte dagens opgaver", -3);
-					pControl.StartPrint ("Slide 3: Rigtigt godt. Prøv nu bare at stemple 'Afvist'", -3);
+					pControl.StartPrint ("Du vil blive evalueret løbende. Afvis dette papir for at starte dagens opgaver", -3);
+					//pControl.StartPrint ("Slide 3: Rigtigt godt. Prøv nu bare at stemple 'Afvist'", -3);
 				}
 			} else if (!taskThree) {
 

@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewScene: Kontor
-  TimeToChange: 2
+  TimeToChange: 1
 --- !u!114 &727281605
 MonoBehaviour:
   m_ObjectHideFlags: 0

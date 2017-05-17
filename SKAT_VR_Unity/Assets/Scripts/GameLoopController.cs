@@ -11,6 +11,8 @@ public class GameLoopController : MonoBehaviour {
 	public float taskAcceleration; //Lerped per second
 	public bool autoNewTasksOnCompletion;
 
+	public AudioSource endGameSound;
+
 	public bool playIntroVideo;
 
 	public TextMesh scoreText;
@@ -98,7 +100,9 @@ public class GameLoopController : MonoBehaviour {
 		else
 		{
 			if (!gameEndActivated) {
-				ActivateGameEnd ();
+				rControl.EndSounds ();
+				endGameSound.Play ();
+				vControl.ForceNewVideo (Video.GameOver);
 				gameEndActivated = true;
 			}
 
@@ -108,7 +112,10 @@ public class GameLoopController : MonoBehaviour {
 
 	private void ActivateGameEnd ()
 	{
+		Debug.Log ("GameEnd Activated");
+
 		ScoreEnum s = sControl.GetScoreResult ();
+
 		switch (s) {
 		case ScoreEnum.High:
 			vControl.PlayVideo (Video.EndGood);
@@ -120,8 +127,6 @@ public class GameLoopController : MonoBehaviour {
 			vControl.PlayVideo (Video.EndBad);
 			break;
 		}
-
-		rControl.EndSounds ();
 
 		scoreText.text = string.Format ("Score: {0} rigtige!", sControl.Score); 
 
@@ -143,7 +148,9 @@ public class GameLoopController : MonoBehaviour {
 			introPlaying = false;
 			tutorialTime = true;
 			break;
-		
+		case (Video.GameOver):
+			ActivateGameEnd ();
+			break;
 		}
 	}
 }
