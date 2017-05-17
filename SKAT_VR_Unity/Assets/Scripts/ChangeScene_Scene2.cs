@@ -19,7 +19,7 @@ public class ChangeScene_Scene2 : MonoBehaviour
 	IEnumerator SwitchScene() {
 		float f = 0;
 		while(true) {
-			if(f > 22) break;
+			if(f > 17) break;
 			f = f+Time.deltaTime;
 			yield return null;
 		}
