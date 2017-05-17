@@ -52,7 +52,7 @@ public class PrintController : MonoBehaviour {
 		firstMove = firstMove / totalMove * totalPrintTime;
 		secondMove = secondMove / totalMove * totalPrintTime;
 		thirdMove = thirdMove / totalMove * totalPrintTime;
-		Debug.Log(string.Format("{0}, {1}, {2}",firstMove, secondMove, thirdMove));
+		//Debug.Log(string.Format("{0}, {1}, {2}",firstMove, secondMove, thirdMove));
 	}
 
 	// Update is called once per frame
