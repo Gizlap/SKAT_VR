@@ -156,6 +156,12 @@ public class GameLoopController : MonoBehaviour {
 		case (Video.GameOver):
 			ActivateGameEnd ();
 			break;
+		case (Video.EndBad):
+		case (Video.EndGood):
+		case (Video.EndNeutral):
+			Application.Quit();
+			break;
 		}
+
 	}
 }
