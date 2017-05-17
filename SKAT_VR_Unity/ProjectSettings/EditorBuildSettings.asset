@@ -8,6 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NewScene/PrepRoom.unity
   - enabled: 1
-    path: Assets/Lydrejse.unity
-  - enabled: 1
     path: Assets/Kontor.unity
+  - enabled: 1
+    path: Assets/LydrejseSpline.unity
