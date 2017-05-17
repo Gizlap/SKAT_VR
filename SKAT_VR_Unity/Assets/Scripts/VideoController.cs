@@ -7,6 +7,10 @@ public class VideoController : MonoBehaviour {
 
 	public GameObject BriefScreen;
 	public GameObject GameOverScreen;
+	public GameObject OnelinerScreen;
+	public GameObject BadEndScreen;
+	public GameObject OkayEndScreen;
+	public GameObject GoodEndScreen;
 
 	public GameObject ActiveScreen;
 
@@ -16,7 +20,7 @@ public class VideoController : MonoBehaviour {
 	private Video activeVideo = Video.NoVideo;
 
 	public Material IntroVid;
-	public Material[] hurryVids;
+	//public Material[] hurryVids;
 	public Material GameOver;
 
 	public Material SkatBlank;
@@ -54,6 +58,7 @@ public class VideoController : MonoBehaviour {
 	public void ForceNewVideo (Video vid)
 	{
 		endVideo (activeVideo);
+		EndActiveVideo ();
 
 		VideoPlay (vid);
 		
@@ -79,15 +84,19 @@ public class VideoController : MonoBehaviour {
 			break;
 		case Video.HurryVid:
 			//newScreen = hurryVids[rand.Next(hurryVids.Length)];
+			ActiveScreen = OnelinerScreen;
 			break;
 		case Video.EndBad:
 			//newScreen = EndBad;
+			ActiveScreen = BadEndScreen;
 			break;
 		case Video.EndNeutral:
 			//newScreen = EndOkay;
+			ActiveScreen = OkayEndScreen;
 			break;
 		case Video.EndGood:
 			//newScreen = EndGood;
+			ActiveScreen = GoodEndScreen;
 			break;
 		case Video.NoVideo:
 			//newScreen = SkatBlank;
@@ -105,6 +114,14 @@ public class VideoController : MonoBehaviour {
 		//screen.material = newScreen;
 		//((MovieTexture)screen.material.mainTexture).Play ();
 	}
+
+	private void EndActiveVideo(){
+		if (!NoVideoPlaying()) {
+			activeVideo = Video.NoVideo;
+			ActiveScreen.SetActive (false);
+			ActiveScreen = null;
+		}
+	}
 		
 	/*public void PlayIntro(){
 		if (!videoPlaying) {
@@ -119,9 +136,7 @@ public class VideoController : MonoBehaviour {
 		if (!NoVideoPlaying() && !((MovieTexture)ActiveScreen.GetComponent<Renderer>().material.mainTexture).isPlaying)//!((MovieTexture)screen.material.mainTexture).isPlaying) 
 		{
 			Video remVid = activeVideo; 
-			activeVideo = Video.NoVideo;
-			ActiveScreen.SetActive (false);
-			ActiveScreen = null;
+			EndActiveVideo ();
 			//screen.material = SkatBlank;
 			endVideo (remVid);
 		}

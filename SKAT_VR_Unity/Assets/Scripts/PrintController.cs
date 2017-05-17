@@ -115,11 +115,18 @@ public class PrintController : MonoBehaviour {
 		//newTask.
 	}
 
+	private int printInt = 0;
+
 	public void StartPrint(){
 
-		int id = -1;
-		string text = json.GetTask (out id);
-		engagePrinter (text, id);
+		if (!printActive && activated) {
+			string text = json.GetTaskOrder (printInt);
+			engagePrinter (text, printInt);
+			printInt++;
+		}
+		//int id = -1;
+		//string text = json.GetTask (out id);
+		//engagePrinter (text, id);
 	}
 
 	void engagePrinter (string text, int id)

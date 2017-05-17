@@ -45,5 +45,10 @@ public class JsonController : MonoBehaviour
 
 		return text;
 	}
+
+	public string GetTaskOrder(int id){
+		JToken task = jar [id];
+		return task ["text"].ToString();
+	}
 }
 

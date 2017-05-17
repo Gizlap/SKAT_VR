@@ -27,7 +27,7 @@ public class GameLoopController : MonoBehaviour {
 	private float currentGameTime;
 
 	public bool introPlaying = true;
-	public bool tutorialTime = false;
+	public bool onelinersStarted = false;
 	public bool gameEndActivated = false;
 
 	private float timeUntilNextTask;
@@ -80,9 +80,14 @@ public class GameLoopController : MonoBehaviour {
 		}
 		else if(currentGameTime > 0f)
 		{
-			pControl.Activate();
+			if (!onelinersStarted) {
+				vControl.PlayVideo (Video.HurryVid);
+				onelinersStarted = true;
+				pControl.StartPrint();
+			}
+			
+			//pControl.Activate();
 			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
-
 
 			//Game running
 			timeUntilNextTask -= Time.deltaTime;
@@ -127,7 +132,7 @@ public class GameLoopController : MonoBehaviour {
 			vControl.PlayVideo (Video.EndBad);
 			break;
 		}
-
+		scoreText.gameObject.SetActive (true);
 		scoreText.text = string.Format ("Score: {0} rigtige!", sControl.Score); 
 
 		//TODO
@@ -143,10 +148,10 @@ public class GameLoopController : MonoBehaviour {
 
 
 	public void VideoEnd(Video vid){
+		
 		switch (vid){
 		case (Video.Intro):
 			introPlaying = false;
-			tutorialTime = true;
 			break;
 		case (Video.GameOver):
 			ActivateGameEnd ();
