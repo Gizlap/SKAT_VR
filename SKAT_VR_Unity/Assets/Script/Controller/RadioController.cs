@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RadioController : MonoBehaviour {
 
-	public GameObject[] sounds = new GameObject[5];
+	public GameObject[] sounds;
 
 	// Use this for initialization
 	void Start () {
