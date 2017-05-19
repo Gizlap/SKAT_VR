@@ -4,143 +4,167 @@ using UnityEngine;
 
 public class PrintController : MonoBehaviour {
 
-	public GameObject blanket;
+    public GameObject blanket;
 
-	public JsonController json;
-	public ScoreController scoreCont;
+    public JsonController json;
+    public ScoreController scoreCont;
 
-	//public float printSpeedFactor = 0.1f;
+    //public float printSpeedFactor = 0.1f;
 
-	public Transform first;
-	public Transform second;
-	public Transform third;
-	public Transform final;
-	public Transform revPos;
+    public Transform first;
+    public Transform second;
+    public Transform third;
+    public Transform final;
+    public Transform revPos;
 
-	public float taskSpeed;
-	public float totalPrintTime;
+    public float taskSpeed;
+    public float totalPrintTime;
 
-	public float firstMove;
-	public float secondMove;
-	public float thirdMove;
-	private float startTime;
+    public float firstMove;
+    private float firstMoveActual;
+    public float secondMove;
+    private float secondMoveActual;
+    public float thirdMove;
+    private float thirdMoveActual;
+    private float startTime;
 
-	DocumentController newTask;
-	public DocumentController activeDocument;
+    DocumentController newTask;
+    public DocumentController activeDocument;
 
-	private bool printActive = false;
-	private bool disabledPrevious = false;
+    private bool printActive = false;
+    private bool disabledPrevious = false;
 
-	private bool activated = false;
+    private bool activated = false;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start () {
+        
+    }
 
-	void Awake () {
-		//StartPrint ();
+    void Awake () {
+        //StartPrint ();
+        ResetMoves();
 
-	}
+    }
 
-	public void Activate(){
-		activated = true;
-	}
+    public bool CurrentlyPrinting { get { return printActive; } }
 
-	public void SetMoveTime(){
-		float totalMove = firstMove+secondMove+thirdMove;
-		firstMove = firstMove / totalMove * totalPrintTime;
-		secondMove = secondMove / totalMove * totalPrintTime;
-		thirdMove = thirdMove / totalMove * totalPrintTime;
-		//Debug.Log(string.Format("{0}, {1}, {2}",firstMove, secondMove, thirdMove));
-	}
+    public void Activate(){
+        activated = true;
+    }
 
-	// Update is called once per frame
-	void Update () {
-		if(activated){
-			firstMove = firstMove / (1 + (taskSpeed * Time.deltaTime));
-			secondMove = secondMove / (1 + (taskSpeed * Time.deltaTime));
-			thirdMove = thirdMove / (1 + (taskSpeed * Time.deltaTime));
+    public void SetMoveTime(){
+        float totalMove = firstMove+secondMove+thirdMove;
+        firstMove = firstMove / totalMove * totalPrintTime;
+        secondMove = secondMove / totalMove * totalPrintTime;
+        thirdMove = thirdMove / totalMove * totalPrintTime;
+        //Debug.Log(string.Format("{0}, {1}, {2}",firstMove, secondMove, thirdMove));
+    }
 
-			/*if (Time.time > 1f && firstPrint) {
-				StartPrint ();
-				firstPrint = false;
-			}*/
+    public void ResetMoves()
+    {
+        //SetMoveTime();
+        firstMoveActual = firstMove;
+        secondMoveActual = secondMove;
+        thirdMoveActual = thirdMove;
+    }
 
-			if (printActive) {
-				float t = Time.time - startTime;
-				//Debug.Log(string.Format("t: {0}", t));
-				float curT = 0f;
-				if(t <= firstMove) {
-					curT = t / firstMove;
-					newTask.transform.position = Vector3.Lerp(first.position, second.position, curT);
-					newTask.transform.rotation = Quaternion.Lerp (first.rotation, second.rotation, curT);
-				} else if (t <= firstMove + secondMove) {
-					curT = (t - (firstMove)) / secondMove;
-					newTask.transform.position = Vector3.Lerp (second.position, third.position, curT);					
-					newTask.transform.rotation = Quaternion.Lerp (second.rotation, third.rotation, curT);
-				} else if (t <= firstMove + secondMove + thirdMove) {
-					curT = (t - (firstMove + secondMove)) / thirdMove;
-					newTask.transform.position = Vector3.Lerp (third.position, final.position, curT);
-					newTask.transform.rotation = Quaternion.Lerp (third.rotation, final.rotation, curT);
+    // Update is called once per frame
+    void Update () {
+        if(activated){
+            firstMoveActual = firstMoveActual / (1 + (taskSpeed * Time.deltaTime));
+            secondMoveActual = secondMoveActual / (1 + (taskSpeed * Time.deltaTime));
+            thirdMoveActual = thirdMoveActual / (1 + (taskSpeed * Time.deltaTime));
 
-					if (!disabledPrevious) {
-						//switch moving paper to active for stamping and current paper to non-active.
-						if (activeDocument != null) {
-							activeDocument.DisableStamping ();
-						}
+            /*if (Time.time > 1f && firstPrint) {
+                StartPrint ();
+                firstPrint = false;
+            }*/
 
-						disabledPrevious = true;
-					}
-				} else {
-					newTask.transform.position = final.position;
-					newTask.transform.rotation = final.rotation;
-					newTask.EnableStamping ();
+            if (printActive)
+            {
+                float t = Time.time - startTime;
+                //Debug.Log(string.Format("t: {0}", t));
+                float curT = 0f;
+                if (t <= firstMoveActual)
+                {
+                    curT = t / firstMoveActual;
+                    newTask.transform.position = Vector3.Lerp(first.position, second.position, curT);
+                    newTask.transform.rotation = Quaternion.Lerp(first.rotation, second.rotation, curT);
+                }
+                else if (t <= firstMoveActual + secondMoveActual)
+                {
+                    curT = (t - (firstMoveActual)) / secondMoveActual;
+                    newTask.transform.position = Vector3.Lerp(second.position, third.position, curT);
+                    newTask.transform.rotation = Quaternion.Lerp(second.rotation, third.rotation, curT);
+                }
+                else if (t <= firstMoveActual + secondMoveActual + thirdMoveActual)
+                {
+                    curT = (t - (firstMoveActual + secondMoveActual)) / thirdMoveActual;
+                    newTask.transform.position = Vector3.Lerp(third.position, final.position, curT);
+                    newTask.transform.rotation = Quaternion.Lerp(third.rotation, final.rotation, curT);
 
-					activeDocument.transform.position = revPos.position;
-					activeDocument.gameObject.SetActive(false);
+                    if (!disabledPrevious)
+                    {
+                        //switch moving paper to active for stamping and current paper to non-active.
+                        if (activeDocument != null)
+                        {
+                            activeDocument.DisableStamping();
+                        }
 
-					activeDocument = newTask.GetComponent<DocumentController> ();
+                        disabledPrevious = true;
+                    }
+                }
+                else
+                {
+                    newTask.transform.position = final.position;
+                    newTask.transform.rotation = final.rotation;
+                    newTask.EnableStamping();
 
-					printActive = false;
-					disabledPrevious = false;
-				}
-				//Debug.Log(curT);
-			}
-		}
-	}
+                    activeDocument.transform.position = revPos.position;
+                    activeDocument.gameObject.SetActive(false);
 
-	public void StartPrint(string text, int id){
-		engagePrinter (text, id);
-		//newTask.
-	}
+                    activeDocument = newTask.GetComponent<DocumentController>();
 
-	private int printInt = 0;
+                    printActive = false;
+                    disabledPrevious = false;
+                }
+                //Debug.Log(curT);
+            }
+        }
+    }
 
-	public void StartPrint(){
+    public void StartPrint(string text, int id){
+        engagePrinter (text, id);
+        //newTask.
+    }
 
-		if (!printActive && activated) {
-			string text = json.GetTaskOrder (printInt);
-			engagePrinter (text, printInt);
-			printInt++;
-		}
-		//int id = -1;
-		//string text = json.GetTask (out id);
-		//engagePrinter (text, id);
-	}
+    private int printInt = 0;
 
-	void engagePrinter (string text, int id)
-	{
-		if (!printActive && activated) {
-			startTime = Time.time;
-			printActive = true;
-			GameObject obj = Instantiate (blanket);
-			newTask = obj.GetComponent<DocumentController> ();
-			newTask.SetText (id, text);
-			newTask.transform.position = first.position;
-			newTask.scoreTrack = scoreCont;
-			//TODO
-			//newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
-		}
-	}
+    public void StartPrint(){
+
+        if (!printActive && activated) {
+            string text = json.GetTaskOrder (printInt);
+            engagePrinter (text, printInt);
+            printInt++;
+        }
+        //int id = -1;
+        //string text = json.GetTask (out id);
+        //engagePrinter (text, id);
+    }
+
+    void engagePrinter (string text, int id)
+    {
+        if (!printActive && activated) {
+            startTime = Time.time;
+            printActive = true;
+            GameObject obj = Instantiate (blanket);
+            newTask = obj.GetComponent<DocumentController> ();
+            newTask.SetText (id, text);
+            newTask.transform.position = first.position;
+            newTask.scoreTrack = scoreCont;
+            //TODO
+            //newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
+        }
+    }
 }
