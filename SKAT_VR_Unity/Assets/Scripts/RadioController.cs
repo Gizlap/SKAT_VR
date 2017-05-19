@@ -16,6 +16,12 @@ public class RadioController : MonoBehaviour {
 			s.SetActive(true);
 		}
 	}
+
+	public void EndSounds(){
+		foreach(GameObject s in sounds){
+			s.SetActive(false);
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {

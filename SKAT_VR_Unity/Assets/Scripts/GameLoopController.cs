@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
 
 public class GameLoopController : MonoBehaviour {
 
-	public float gameTime = 60.0f;
-	public float timeIntervalBetweenTasks = 3.0f;
-	public float timeBeforeNextPrintStarts = 0.5f;
-	public float taskAcceleration = 0.01f; //Lerped per second
-	public bool autoNewTasksOnCompletion = false;
+	public float gameTime;
+	public float timeIntervalBetweenTasks;
+	public float timeBeforeNextPrintStarts;
+	public float taskAcceleration; //Lerped per second
+	public bool autoNewTasksOnCompletion;
 
-	public bool playIntroVideo = true;
+	public AudioSource endGameSound;
 
+	public bool playIntroVideo;
+
+	public TextMesh scoreText;
 
 	public PrintController pControl;
 	public VideoController vControl;
@@ -23,7 +27,7 @@ public class GameLoopController : MonoBehaviour {
 	private float currentGameTime;
 
 	public bool introPlaying = true;
-	public bool tutorialTime = false;
+	public bool onelinersStarted = false;
 	public bool gameEndActivated = false;
 
 	private float timeUntilNextTask;
@@ -76,9 +80,14 @@ public class GameLoopController : MonoBehaviour {
 		}
 		else if(currentGameTime > 0f)
 		{
-			pControl.Activate();
+			if (!onelinersStarted) {
+				vControl.PlayVideo (Video.HurryVid);
+				onelinersStarted = true;
+				pControl.StartPrint();
+			}
+			
+			//pControl.Activate();
 			//Debug.Log(string.Format("Game time: {0}, time till next Task: {1}, currentInterval: {2}", currentGameTime, timeUntilNextTask, timeIntervalBetweenTasks));
-
 
 			//Game running
 			timeUntilNextTask -= Time.deltaTime;
@@ -96,7 +105,9 @@ public class GameLoopController : MonoBehaviour {
 		else
 		{
 			if (!gameEndActivated) {
-				ActivateGameEnd ();
+				rControl.EndSounds ();
+				endGameSound.Play ();
+				vControl.ForceNewVideo (Video.GameOver);
 				gameEndActivated = true;
 			}
 
@@ -104,9 +115,12 @@ public class GameLoopController : MonoBehaviour {
 		}
 	}
 
-	void ActivateGameEnd ()
+	private void ActivateGameEnd ()
 	{
+		Debug.Log ("GameEnd Activated");
+
 		ScoreEnum s = sControl.GetScoreResult ();
+
 		switch (s) {
 		case ScoreEnum.High:
 			vControl.PlayVideo (Video.EndGood);
@@ -118,6 +132,8 @@ public class GameLoopController : MonoBehaviour {
 			vControl.PlayVideo (Video.EndBad);
 			break;
 		}
+		scoreText.gameObject.SetActive (true);
+		scoreText.text = string.Format ("Score: {0} rigtige!", sControl.Score); 
 
 		//TODO
 
@@ -132,12 +148,20 @@ public class GameLoopController : MonoBehaviour {
 
 
 	public void VideoEnd(Video vid){
+		
 		switch (vid){
 		case (Video.Intro):
 			introPlaying = false;
-			tutorialTime = true;
 			break;
-		
+		case (Video.GameOver):
+			ActivateGameEnd ();
+			break;
+		case (Video.EndBad):
+		case (Video.EndGood):
+		case (Video.EndNeutral):
+			Application.Quit();
+			break;
 		}
+
 	}
 }

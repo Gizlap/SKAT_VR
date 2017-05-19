@@ -2,101 +2,116 @@
 	"list": [{
 			"id": 0,
 			"answer": false,
-			"text": "Skal der udbetales 10 mio til Svindell og S¯n ApS? Godkend/Afvis?"
+			"text": "Skal der udbetales 10 mio til Svindell og S√∏n ApS? Godkend/Afvis?"
 		},
 		{
 			"id": 1,
 			"answer": false,
-			"text": "Skal vi godkende udbetalingen pÂ 20 millioner for negativ moms til Candy og Co for 10. Âr i trÊk? Godkend/Afvis?"
+			"text": "Skal vi godkende udbetalingen p√Ç 20 millioner for negativ moms til Candy og Co for 10. √Çr i tr√¶k? Godkend/Afvis?"
 		},
 		{
 			"id": 2,
 			"answer": false,
-			"text": "MÂ Scientology trÊkke regningen fra Hooters fra? Godkend/Afvis?"
+			"text": "M√• Scientology tr√¶kke regningen fra Hooters fra? Godkend/Afvis?"
 		},
 		{
-			"id": 3,
+			"id": 19,
 			"answer": true,
-			"text": "Bente Blomst I/S anmoder om at fratrÊkke sine husleje-udgifter, som er afholdt seks mÂneder f¯r virksomheden startede? Godkend/Afvis?"
+			"text": "Bente Blomst I/S anmoder om at fratr√¶kke sine husleje-udgifter, som er afholdt seks m√•neder fra virksomheden startede? Godkend/Afvis?"
 		},
 		{
 			"id": 4,
 			"answer": false,
-			"text": "Telefonfis ApS anmoder om undgÂ at betale skat af fri telefon, da de driver deres virksomhed fra privat bolig. Godkend/Afvis?"
+			"text": "Telefonfis ApS anmoder om undg√• at betale skat af fri telefon, da de driver deres virksomhed fra privat bolig. Godkend/Afvis?"
 		},
 		{
 			"id": 5,
-			"answer": false,
-			"text": "Helle Snorlige anmoder om at betale skat i London, da hun er bosiddende i London? Godkend/Afvis?"
+			"answer": true,
+			"text": "Helle Snorlige anmoder om at betale skat i England, da hun har arbejdet i London i over et √•r? Godkend/Afvis?"
 		},
 		{
 			"id": 6,
 			"answer": true,
-			"text": "Skal selskabet Rettidig Omhu I/S betale et skattetillÊg pÂ 200 kr. om dagen, hvis selskabet ikke selvangiver til tiden? Godkend/Afvis?"
+			"text": "Skal selskabet Rettidig Omhu I/S betale et skattetill√¶g p√Ç 200 kr. om dagen, hvis selskabet ikke selvangiver til tiden? Godkend/Afvis?"
 		},
 		{
-			"id": 7,
+			"id": 23,
 			"answer": true,
-			"text": "MÂ S¯borg kommune selv inddrive gÊld vedrÂrende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2017? Godkend/Afvis?"
+			"text": "M√• S√∏borg kommune selv inddrive g√¶ld vedr√∏rende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2017? Godkend/Afvis?"
 		},
 		{
-			"id": 8,
+			"id": 21,
 			"answer": false,
-			"text": "MÂ Gentofte kommune selv inddrive gÊld vedrÂrende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2016? Godkend/Afvis?"
+			"text": "M√• Gentofte kommune selv inddrive g√¶ld vedr√∏rende ejendomsskatter og andre gebyrer og afgifter, der knytter sig til en ejendom (fortrinsberettigede krav), efter februar 2016? Godkend/Afvis?"
 		},
 		{
 			"id": 9,
 			"answer": false,
-			"text": "Må escortservice firmaet Pleasure Pernille I/S trÊkke udgiften til silikonebrysterne fra? Godkend/Afvis?"
+			"text": "M√• escortservice firmaet Pleasure Pernille I/S tr√¶kke udgiften til silikonebrysterne fra? Godkend/Afvis?"
 		},
 		{
-			"id": 10,
+			"id": 15,
 			"answer": false,
-			"text": "Skal vi godkende udbetalingen af 100.000 kr. i eksportgodtgÂrelse til Skrammel og Co for en Toyota Yaris eksporteret til Polen? Godkend/Afvis?"
+			"text": "Skal vi godkende udbetalingen af 100.000 kr. i eksportgodtg√∏relse til Skrammel og Co for en Toyota Yaris eksporteret til Polen? Godkend/Afvis?"
 		},
 		{
 			"id": 11,
 			"answer": true,
-			"text": "Skal vi beskatte et maleri af Rembrandt, som fru. Jensen gav sin datter et Âr inden hendes dÂb? Godkend/Afvis?"
+			"text": "Skal vi beskatte et maleri af Rembrandt, som fru. Jensen gav sin datter et √Çr inden hendes d√•b? Godkend/Afvis?"
 		},
 		{
-			"id": 12,
+			"id": 16,
 			"answer": false,
-			"text": "Der ligger en fribilletter til Roskilde festival i posten. Skal vi sende  dem til de medarbejdere i SKAT som har f¯dselsdag? Godkend/Afvis?"
+			"text": "Der ligger en fribilletter til Roskilde festival i posten. Skal vi sende  dem til de medarbejdere i SKAT som har f√∏dselsdag? Godkend/Afvis?"
 		},
 		{
 			"id": 13,
 			"answer": false,
-			"text": "Kan vi godkende en IT løsning, der via mail spørger om folks kontonummer, så vi nemmere kan udbetale penge tl dem? Godkend/Afvis?"
+			"text": "Kan vi godkende en IT l√∏sning, der via mail sp√∏rger om folks kontonummer, s√• vi nemmere kan udbetale penge tl dem? Godkend/Afvis?"
 		},
 		{
 			"id": 14,
 			"answer": false,
-			"text": "Din nabo skal have penge tilbage i SKAT og anmoder dig om at tjekke årsopgørelsen? Godkend/Afvis?"
+			"text": "Din nabo skal have penge tilbage i SKAT og anmoder dig om at tjekke √•rsopg√∏relsen? Godkend/Afvis?"
 		}, {
-			"id": 15,
+			"id": 10,
 			"answer": true,
-			"text": "Skal SKAT godkende købet af en hund der kan lugte sig frem til penge? Findes de? Godkend/Afvis?"
+			"text": "Skal SKAT godkende k√∏bet af en hund der kan lugte sig frem til penge? Findes de? Godkend/Afvis?"
 		}, {
-			"id": 16,
+			"id": 12,
 			"answer": false,
-			"text": "Må Piano Per slippe for at betale skat af sin b-indkomst som musiker, da det var et sløvt år? Godkend/Afvis?"
+			"text": "M√• Piano Per slippe for at betale skat af sin b-indkomst som musiker, da det var et sl√∏vt √•r? Godkend/Afvis?"
 		}, {
 			"id": 17,
 			"answer": false,
-			"text": "Må Ulla Udlejer slippe for at betale skat af sine Airbnb indtægter, da hun kun har tjent kr 19.000 i 2016? Godkend/Afvis?"
+			"text": "M√• Ulla Udlejer slippe for at betale skat af sine Airbnb indt√¶gter, da hun kun har tjent kr 19.000 i 2016? Godkend/Afvis?"
 		}, {
 			"id": 18,
 			"answer": false,
-			"text": "Må Bent Bed and Breakfast slippe for at opgive sine Airbnb indtægter til SKAT, hvis de ikke overstiger kr 10.000? Godkend/Afvis?"
+			"text": "M√• Bent Bed and Breakfast slippe for at opgive sine Airbnb indt√¶gter til SKAT, hvis de ikke overstiger kr 10.000? Godkend/Afvis?"
 		}, {
-			"id": 19,
-			"answer": true,
-			"text": "Må Bent Bed and Breakfast slippe for at opgive sine Airbnb indtægter til SKAT, hvis de ikke overstiger kr 10.000? Godkend/Afvis?"
+			"id": 3,
+			"answer": false,
+			"text": "Skal SKAT have som strategi, at f√• flere i f√¶ngsel? Godkend/Afvis?"
 		}, {
 			"id": 20,
 			"answer": true,
-			"text": "Må William Vindmølle slippe for at regne tilskuddet til sin vindmølle med i sin indkomst? Godkend/Afvis?"
+			"text": "M√• William Vindm√∏lle slippe for at regne tilskuddet til sin vindm√∏lle med i sin indkomst? Godkend/Afvis?"
+		},
+		{
+			"id": 8,
+			"answer": false,
+			"text": "Skal SKAT afskaffe toldhundene, der fx kan snuse sig frem til stoffer, penge og v√•ben? Godkend/Afvis?"
+		},
+		{
+			"id": 22,
+			"answer": true,
+			"text": "Skal SKAT iv√¶rks√¶tte et projekt om kasseapparater her i 2017? Godkend/Afvis?"
+		},
+		{
+			"id": 7,
+			"answer": true,
+			"text": "Skal SKAT medarbejdere fortsat have betalt frokostpause? Godkend/Afvis?"
 		}
 	]
 }

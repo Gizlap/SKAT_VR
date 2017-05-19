@@ -1,17 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class VideoController : MonoBehaviour {
+
+	public GameObject BriefScreen;
+	public GameObject GameOverScreen;
+	public GameObject OnelinerScreen;
+	public GameObject BadEndScreen;
+	public GameObject OkayEndScreen;
+	public GameObject GoodEndScreen;
+
+	public GameObject ActiveScreen;
+
 
 	public MeshRenderer screen;
 
 	private Video activeVideo = Video.NoVideo;
 
 	public Material IntroVid;
-	public Material hurry1;
-	public Material hurry2;
-	public Material hurry3;
+	//public Material[] hurryVids;
+	public Material GameOver;
+
 	public Material SkatBlank;
 	public Material Illegal;
 
@@ -20,6 +31,8 @@ public class VideoController : MonoBehaviour {
 	public Material EndGood;
 
 	public MovieEnd endVideo;
+
+	private System.Random rand = new System.Random();
 
 	//private bool videoPlaying = false;
 
@@ -45,6 +58,7 @@ public class VideoController : MonoBehaviour {
 	public void ForceNewVideo (Video vid)
 	{
 		endVideo (activeVideo);
+		EndActiveVideo ();
 
 		VideoPlay (vid);
 		
@@ -61,38 +75,52 @@ public class VideoController : MonoBehaviour {
 	private void VideoPlay (Video vid)
 	{
 		activeVideo = vid;
-		Material newScreen;
+		//Material newScreen;
 		switch (vid) {
 		case Video.Intro:
-			newScreen = IntroVid;
+			
+			//newScreen = IntroVid;
+			ActiveScreen = BriefScreen;
 			break;
-		case Video.Hurry1:
-			newScreen = hurry1;
-			break;
-		case Video.Hurry2:
-			newScreen = hurry2;
-			break;
-		case Video.Hurry3:
-			newScreen = hurry3;
+		case Video.HurryVid:
+			//newScreen = hurryVids[rand.Next(hurryVids.Length)];
+			ActiveScreen = OnelinerScreen;
 			break;
 		case Video.EndBad:
-			newScreen = EndBad;
+			//newScreen = EndBad;
+			ActiveScreen = BadEndScreen;
 			break;
 		case Video.EndNeutral:
-			newScreen = EndOkay;
+			//newScreen = EndOkay;
+			ActiveScreen = OkayEndScreen;
 			break;
 		case Video.EndGood:
-			newScreen = EndGood;
+			//newScreen = EndGood;
+			ActiveScreen = GoodEndScreen;
 			break;
 		case Video.NoVideo:
-			newScreen = SkatBlank;
+			//newScreen = SkatBlank;
+			break;
+		case Video.GameOver:
+			//newScreen = GameOver;
+			ActiveScreen = GameOverScreen;
 			break;
 		default:
-			newScreen = Illegal;
+			//newScreen = Illegal;
 			break;
 		}
-		screen.material = newScreen;
-		((MovieTexture)screen.material.mainTexture).Play ();
+
+		ActiveScreen.SetActive (true);
+		//screen.material = newScreen;
+		//((MovieTexture)screen.material.mainTexture).Play ();
+	}
+
+	private void EndActiveVideo(){
+		if (!NoVideoPlaying()) {
+			activeVideo = Video.NoVideo;
+			ActiveScreen.SetActive (false);
+			ActiveScreen = null;
+		}
 	}
 		
 	/*public void PlayIntro(){
@@ -105,11 +133,12 @@ public class VideoController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!NoVideoPlaying() && !((MovieTexture)screen.material.mainTexture).isPlaying) 
+		if (!NoVideoPlaying() && !((MovieTexture)ActiveScreen.GetComponent<Renderer>().material.mainTexture).isPlaying)//!((MovieTexture)screen.material.mainTexture).isPlaying) 
 		{
-			endVideo (activeVideo);
-			screen.material = SkatBlank;
-			activeVideo = Video.NoVideo;
+			Video remVid = activeVideo; 
+			EndActiveVideo ();
+			//screen.material = SkatBlank;
+			endVideo (remVid);
 		}
 	}
 }

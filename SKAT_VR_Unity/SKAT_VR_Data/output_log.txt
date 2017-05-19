@@ -1,0 +1,232 @@
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8144 MB
+    Driver:   21.21.13.7563
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\AudioToolkit_FreeVersion.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\AudioToolkit_FreeVersion.dll into Unity Child Domain
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Newtonsoft.Json.dll (this message is harmless)
+Loading D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\Newtonsoft.Json.dll into Unity Child Domain
+- Completed reload, in  0.025 seconds
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Github\SKAT_VR\SKAT_VR_Unity\SKAT_VR_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initialized touch support.
+OpenVR initialized!
+ 
+(Filename:  Line: 381)
+
+UnloadTime: 0.625877 ms
+Connected to lighthouse:LHR-E77C63A6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2c88 -> priority: 1 
+  Thread -> id: 528c -> priority: 1 
+Player score is 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 6
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player score is 7
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+TriggerEnter
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+GameEnd Activated
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OpenVR Shutdown
+ 
+(Filename:  Line: 815)
+
