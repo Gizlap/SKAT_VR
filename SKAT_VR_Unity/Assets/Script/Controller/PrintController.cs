@@ -26,6 +26,7 @@ public class PrintController : MonoBehaviour {
     private float secondMoveActual;
     public float thirdMove;
     private float thirdMoveActual;
+
     private float startTime;
 
     DocumentController newTask;

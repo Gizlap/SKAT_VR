@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransfer : MonoBehaviour {
 
     public Renderer screen;
+    public string sceneToSwitchTo;
 
     // Use this for initialization
     void Start () {
@@ -23,7 +24,7 @@ public class SceneTransfer : MonoBehaviour {
     {
         if (!((MovieTexture)screen.material.mainTexture).isPlaying)
         {
-            SceneManager.LoadScene("Lydrejse", LoadSceneMode.Single);
+            SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Single);
         }
     }
 }
