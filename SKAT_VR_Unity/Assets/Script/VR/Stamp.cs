@@ -51,17 +51,17 @@ public class Stamp : MonoBehaviour {
         return xAxis && zAxis;
     }
 
-    private Time timerStart { get; set; }
+    private float timerStart { get; set; }
 
     public float timeBetweenStamps = 0.2f;
 
     private bool CheckTiming()
     {
-        return (Time.time >= timerStart.time + timeBetweenStamps);
+        return (Time.time >= timerStart + timeBetweenStamps);
         //Timing
     }
 
-    public bool Stampable { get {return CheckStability() && CheckTiming()} }
+    public bool Stampable { get { return CheckStability() && CheckTiming(); } }
 
     public bool StampAction()
     {
