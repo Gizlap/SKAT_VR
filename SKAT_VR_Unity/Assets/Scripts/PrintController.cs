@@ -9,6 +9,8 @@ public class PrintController : MonoBehaviour {
 	public JsonController json;
 	public ScoreController scoreCont;
 
+	public TextMesh playerTimer;
+
 	//public float printSpeedFactor = 0.1f;
 
 	public Transform first;
@@ -67,6 +69,7 @@ public class PrintController : MonoBehaviour {
 				firstPrint = false;
 			}*/
 
+
 			if (printActive) {
 				float t = Time.time - startTime;
 				//Debug.Log(string.Format("t: {0}", t));
@@ -75,18 +78,22 @@ public class PrintController : MonoBehaviour {
 					curT = t / firstMove;
 					newTask.transform.position = Vector3.Lerp(first.position, second.position, curT);
 					newTask.transform.rotation = Quaternion.Lerp (first.rotation, second.rotation, curT);
+					UpdateTimer (firstMove+secondMove-t);
 				} else if (t <= firstMove + secondMove) {
 					curT = (t - (firstMove)) / secondMove;
 					newTask.transform.position = Vector3.Lerp (second.position, third.position, curT);					
 					newTask.transform.rotation = Quaternion.Lerp (second.rotation, third.rotation, curT);
+					UpdateTimer (firstMove+secondMove-t);
 				} else if (t <= firstMove + secondMove + thirdMove) {
 					curT = (t - (firstMove + secondMove)) / thirdMove;
 					newTask.transform.position = Vector3.Lerp (third.position, final.position, curT);
 					newTask.transform.rotation = Quaternion.Lerp (third.rotation, final.rotation, curT);
+					NothingTimer ();
 
 					if (!disabledPrevious) {
 						//switch moving paper to active for stamping and current paper to non-active.
-						if (activeDocument != null) {
+						if (activeDocument != null) 
+						{
 							activeDocument.DisableStamping ();
 						}
 
@@ -96,6 +103,7 @@ public class PrintController : MonoBehaviour {
 					newTask.transform.position = final.position;
 					newTask.transform.rotation = final.rotation;
 					newTask.EnableStamping ();
+					NothingTimer ();
 
 					activeDocument.transform.position = revPos.position;
 					activeDocument.gameObject.SetActive(false);
@@ -142,5 +150,18 @@ public class PrintController : MonoBehaviour {
 			//TODO
 			//newTask.SetText (-1, "Udbetaling af udbytteskat til skuffeselskabet 'Svindell og Søn ApS' af 10.000.000 kr.");
 		}
+	}
+
+	void UpdateTimer(float time){
+		string timeDecimal = time.ToString ("0.00"); 
+		playerTimer.text = "Opgave afleveres om:\n" + timeDecimal;
+	}
+
+	void NothingTimer(){
+		playerTimer.text = "Næste opgave\npå vej";
+	}
+
+	void EmptyTimer(){
+		playerTimer.text = "";
 	}
 }

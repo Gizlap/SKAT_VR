@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263797502211544}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 4.38, y: 0.001, z: -2.43}
+  m_LocalPosition: {x: 0, y: 0.001, z: -2.43}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 4049555705526648}
@@ -338,14 +338,16 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263797502211544}
-  m_Text: "Skal der udbetales udbytteskat\ntil Svindel & S\xF8n ApS for\n10 mio kr?"
+  m_Text: "M\xE5 Gladsaxe kommune selv \ninddrive g\xE6ld vedr\xF8rende \nejendomsskatter
+    og andre \ngebyrer og afgifter, der \nknytter sig til en ejendom \n(fortrinsberettigede
+    krav), \nefter februar 2017? \nGodkend/Afvis?"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
-  m_Anchor: 0
+  m_Anchor: 1
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 60
+  m_FontSize: 72
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 1404f1518f1d63a4893180dc24e4cbd3, type: 3}
@@ -403,4 +405,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 102602642725534938}
-  letterLimit: 28
+  letterLimit: 24
