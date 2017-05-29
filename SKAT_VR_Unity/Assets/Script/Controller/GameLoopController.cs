@@ -14,7 +14,8 @@ public class GameLoopController : MonoBehaviour {
 
     public AudioSource endGameSound;
 
-    public bool playIntroVideo;
+    public bool skipIntroVideo;
+	public bool skipTutorial;
 
     public TextMesh scoreText;
 
@@ -35,7 +36,6 @@ public class GameLoopController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        IntroPlaying = true;
         OnelinersStarted = false;
         GameEndActivated = false;
 
@@ -43,19 +43,19 @@ public class GameLoopController : MonoBehaviour {
         currentGameTime = gameTime;
         timeUntilNextTask = timeIntervalBetweenTasks;
 
-        pControl.taskSpeed = taskAcceleration;
-        pControl.totalPrintTime = timeIntervalBetweenTasks-timeBeforeNextPrintStarts;
+        pControl.TaskSpeed = taskAcceleration;
+        pControl.TotalPrintTime = timeIntervalBetweenTasks-timeBeforeNextPrintStarts;
         pControl.SetMoveTime ();
 
         vControl.endVideo += VideoEnd;
     }
 
     void Awake(){
-        if (playIntroVideo) {
-            vControl.PlayVideo (Video.Intro);
-            IntroPlaying = true;
-        } else {
-            IntroPlaying = false;
+		if (skipIntroVideo) {
+			IntroPlaying = false;
+		} else {
+			vControl.PlayVideo (Video.Intro);
+			IntroPlaying = true;
         }
     }
     
@@ -68,19 +68,21 @@ public class GameLoopController : MonoBehaviour {
             //Intro running
             //Do nothing more
         } 
-        else if (!tControl.TutorialComplete) 
+		else if (!tControl.TutorialComplete) 
         {
-
-            rControl.beginSounds ();
-            tControl.StartTutorial ();
+			rControl.beginSounds ();
+			tControl.StartTutorial (skipTutorial);
         }
         else if(currentGameTime > 0f)
         {
             if (!OnelinersStarted) {
+				Debug.Log ("Game Started");
+
                 vControl.PlayVideo (Video.HurryVid);
-                OnelinersStarted = true;
                 pControl.ResetMoves();
-                pControl.StartPrint();
+				pControl.StartPrint();
+
+				OnelinersStarted = true;
             }
             
             //pControl.Activate();
@@ -90,13 +92,15 @@ public class GameLoopController : MonoBehaviour {
             //Game running
             timeUntilNextTask -= Time.deltaTime;
             if (autoNewTaskOnTimer && timeUntilNextTask <= 0f && !pControl.CurrentlyPrinting) 
-            {
+			{
+				Debug.Log ("TimerTaskStarted");
                 pControl.StartPrint();
                 timeUntilNextTask = timeIntervalBetweenTasks;
             }
 
             if (autoNewTaskOnStamping && pControl.activeDocument.StampStatus != StampVariation.NoStamp && !pControl.CurrentlyPrinting)
-            {
+			{
+				Debug.Log ("StampTaskStarted");
                 pControl.StartPrint();
                 timeUntilNextTask = timeIntervalBetweenTasks;
             }

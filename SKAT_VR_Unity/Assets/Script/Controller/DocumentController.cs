@@ -46,11 +46,16 @@ public class DocumentController : MonoBehaviour {
     // 1
     public void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(string.Format("TriggerEnter{0}", ""));
+		//Debug.Log("TriggerEnter");
 
-        Stamp stampedStamp = other.GetComponent<Stamp> ();
-        if (stampable && stampedStamp != null) {
-            if(stampedStamp.Stampable){
+		Stamp stampedStamp = other.GetComponent<Stamp> ();
+		//Debug.Log(string.Format("stampedStamp = {0}", stampedStamp == null));
+		//Debug.Log(string.Format("stampable {0}", stampable));
+		if (stampable && stampedStamp != null) {
+			//Debug.Log(string.Format("stability {0}", stampedStamp.CheckStability()));
+			//Debug.Log(string.Format("timing {0}", stampedStamp.CheckTiming()));
+			if(stampedStamp.Stampable){
+				Debug.Log(string.Format("TriggerEnter {0}", stampedStamp.variation));
 
                 //Activate the stamps actions
                 stampedStamp.StampAction();

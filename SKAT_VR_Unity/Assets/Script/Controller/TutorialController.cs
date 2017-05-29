@@ -61,9 +61,12 @@ public class TutorialController : MonoBehaviour {
 		}
 	}
 
-	public void StartTutorial(){
+	public void StartTutorial(bool skipTutorial){
 		if (tutorialStarted) {
 			return;
+		}
+		if (skipTutorial) {
+			TutorialComplete = true;
 		}
 
 		tutorialStarted = true;

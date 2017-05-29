@@ -17,8 +17,8 @@ public class PrintController : MonoBehaviour {
     public Transform final;
     public Transform revPos;
 
-    public float taskSpeed;
-    public float totalPrintTime;
+	public float TaskSpeed { get; set; }
+	public float TotalPrintTime { get; set; }
 
     public float firstMove;
     private float firstMoveActual;
@@ -56,9 +56,9 @@ public class PrintController : MonoBehaviour {
 
     public void SetMoveTime(){
         float totalMove = firstMove+secondMove+thirdMove;
-        firstMove = firstMove / totalMove * totalPrintTime;
-        secondMove = secondMove / totalMove * totalPrintTime;
-        thirdMove = thirdMove / totalMove * totalPrintTime;
+        firstMove = firstMove / totalMove * TotalPrintTime;
+        secondMove = secondMove / totalMove * TotalPrintTime;
+        thirdMove = thirdMove / totalMove * TotalPrintTime;
         //Debug.Log(string.Format("{0}, {1}, {2}",firstMove, secondMove, thirdMove));
     }
 
@@ -73,9 +73,9 @@ public class PrintController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if(activated){
-            firstMoveActual = firstMoveActual / (1 + (taskSpeed * Time.deltaTime));
-            secondMoveActual = secondMoveActual / (1 + (taskSpeed * Time.deltaTime));
-            thirdMoveActual = thirdMoveActual / (1 + (taskSpeed * Time.deltaTime));
+            firstMoveActual = firstMoveActual / (1 + (TaskSpeed * Time.deltaTime));
+            secondMoveActual = secondMoveActual / (1 + (TaskSpeed * Time.deltaTime));
+            thirdMoveActual = thirdMoveActual / (1 + (TaskSpeed * Time.deltaTime));
 
             /*if (Time.time > 1f && firstPrint) {
                 StartPrint ();

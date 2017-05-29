@@ -7,6 +7,8 @@ public class Stamp : MonoBehaviour {
     public StampVariation variation;
     public AudioSource audSrc;
 
+	private Quaternion upDir = Quaternion.LookRotation(Vector3.up);
+
     private SteamVR_TrackedObject trackedObj;
 
     private SteamVR_Controller.Device Controller
@@ -36,26 +38,35 @@ public class Stamp : MonoBehaviour {
         
     }
 
-    float angleOff = 20f;
+    float angleOff = 25f;
 
-    Vector3 frontedVertical = new Vector3(0f, 0f, 0f);
+    Vector3 frontedVertical = new Vector3(270f, 0f, 0f);
 
-    private bool CheckStability()
+    public bool CheckStability()
     {
+		
+
         Vector3 curRot = transform.rotation.eulerAngles;
+
+		float axisDegree = Quaternion.Angle (transform.rotation, upDir);
+		Debug.Log (string.Format("degrees {0}",axisDegree));
+
         //between 70-110 on either axis
-        bool xAxis = curRot.x <= frontedVertical.x + angleOff && curRot.x >= frontedVertical.x - angleOff;
-        bool zAxis = curRot.z <= frontedVertical.z + angleOff && curRot.z >= frontedVertical.z - angleOff;
+        ////bool xAxis = curRot.x <= frontedVertical.x + angleOff && curRot.x >= frontedVertical.x - angleOff;
+		//Debug.Log(string.Format("x Axis: {0}", curRot.x));
+		////bool zAxis = curRot.z <= frontedVertical.z + angleOff && curRot.z >= frontedVertical.z - angleOff;
+		//Debug.Log(string.Format("z Axis: {0}", curRot.z));
 
         //Stability
-        return xAxis && zAxis;
+        //return xAxis && zAxis;
+		return axisDegree <= angleOff;
     }
 
     private float timerStart { get; set; }
 
     public float timeBetweenStamps = 0.2f;
 
-    private bool CheckTiming()
+    public bool CheckTiming()
     {
         return (Time.time >= timerStart + timeBetweenStamps);
         //Timing
