@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneTransfer : MonoBehaviour {
+
+    public Renderer screen;
+    public string sceneToSwitchTo;
+
+    // Use this for initialization
+    void Start () {
+        
+    }
+
+    // Update is called once per frame
+
+    void Awake()
+    {
+        ((MovieTexture)screen.material.mainTexture).Play();
+
+    }
+    void Update()
+    {
+        if (!((MovieTexture)screen.material.mainTexture).isPlaying)
+        {
+            SceneManager.LoadScene(sceneToSwitchTo, LoadSceneMode.Single);
+        }
+    }
+}
